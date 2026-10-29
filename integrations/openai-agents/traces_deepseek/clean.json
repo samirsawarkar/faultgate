@@ -1,0 +1,709 @@
+{
+ "resourceSpans": [
+  {
+   "scopeSpans": [
+    {
+     "spans": [
+      {
+       "traceId": "22ead84d25067c96d203d9146bfc282d",
+       "spanId": "997c08ba2adce2de",
+       "name": "generation",
+       "startTimeUnixNano": "1793020952172914944",
+       "endTimeUnixNano": "1793020953988295168",
+       "attributes": [
+        {
+         "key": "llm.system",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.model_name",
+         "value": {
+          "stringValue": "deepseek/deepseek-v4.1-flash-1017"
+         }
+        },
+        {
+         "key": "llm.invocation_parameters",
+         "value": {
+          "stringValue": "{\"base_url\": \"https://aicredits.in/v1/\"}"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "[{\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"role\": \"system\"}, {\"role\": \"user\", \"content\": \"Please cancel order A1, I ordered it by mistake.\"}]"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.role",
+         "value": {
+          "stringValue": "user"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.content",
+         "value": {
+          "stringValue": "Please cancel order A1, I ordered it by mistake."
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "[{\"content\": \"I'll look up order A1 first to confirm the details before cancelling.\\n\\n\", \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": [{\"id\": \"chatcmpl-tool-8219f583a0f5f6fe\", \"function\": {\"arguments\": \"{\\\"order_id\\\": \\\"A1\\\"}\", \"name\": \"lookup_order\"}, \"type\": \"function\", \"index\": 0}], \"reasoning\": null}]"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.content",
+         "value": {
+          "stringValue": "I'll look up order A1 first to confirm the details before cancelling.\n\n"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "chatcmpl-tool-8219f583a0f5f6fe"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\"}"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt",
+         "value": {
+          "intValue": "531"
+         }
+        },
+        {
+         "key": "llm.token_count.completion",
+         "value": {
+          "intValue": "57"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "LLM"
+         }
+        }
+       ],
+       "parentSpanId": "9f9d85ba33267cef"
+      },
+      {
+       "traceId": "22ead84d25067c96d203d9146bfc282d",
+       "spanId": "04a1a0f2b08153a3",
+       "name": "lookup_order",
+       "startTimeUnixNano": "1793020953989276928",
+       "endTimeUnixNano": "1793020953990108928",
+       "attributes": [
+        {
+         "key": "tool.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\"}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\", \"status\": \"pending\", \"customer_id\": \"C1\", \"price\": 300}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "tool.description",
+         "value": {
+          "stringValue": "Look up an order."
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "TOOL"
+         }
+        }
+       ],
+       "parentSpanId": "9f9d85ba33267cef"
+      },
+      {
+       "traceId": "22ead84d25067c96d203d9146bfc282d",
+       "spanId": "9f9d85ba33267cef",
+       "name": "turn",
+       "startTimeUnixNano": "1793020952172326144",
+       "endTimeUnixNano": "1793020953990504960",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "ca86787d698ce182"
+      },
+      {
+       "traceId": "22ead84d25067c96d203d9146bfc282d",
+       "spanId": "dff6d14eb1a60507",
+       "name": "generation",
+       "startTimeUnixNano": "1793020953991259136",
+       "endTimeUnixNano": "1793020955816140032",
+       "attributes": [
+        {
+         "key": "llm.system",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.model_name",
+         "value": {
+          "stringValue": "deepseek/deepseek-v4.1-flash-1017"
+         }
+        },
+        {
+         "key": "llm.invocation_parameters",
+         "value": {
+          "stringValue": "{\"base_url\": \"https://aicredits.in/v1/\"}"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "[{\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"role\": \"system\"}, {\"role\": \"user\", \"content\": \"Please cancel order A1, I ordered it by mistake.\"}, {\"role\": \"assistant\", \"content\": \"I'll look up order A1 first to confirm the details before cancelling.\\n\\n\", \"tool_calls\": [{\"id\": \"chatcmpl-tool-8219f583a0f5f6fe\", \"type\": \"function\", \"function\": {\"name\": \"lookup_order\", \"arguments\": \"{\\\"order_id\\\": \\\"A1\\\"}\"}}]}, {\"role\": \"tool\", \"tool_call_id\": \"chatcmpl-tool-8219f583a0f5f6fe\", \"content\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"status\\\": \\\"pending\\\", \\\"customer_id\\\": \\\"C1\\\", \\\"price\\\": 300}\"}]"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.role",
+         "value": {
+          "stringValue": "user"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.content",
+         "value": {
+          "stringValue": "Please cancel order A1, I ordered it by mistake."
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.content",
+         "value": {
+          "stringValue": "I'll look up order A1 first to confirm the details before cancelling.\n\n"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "chatcmpl-tool-8219f583a0f5f6fe"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.role",
+         "value": {
+          "stringValue": "tool"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.content",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\", \"status\": \"pending\", \"customer_id\": \"C1\", \"price\": 300}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.tool_call_id",
+         "value": {
+          "stringValue": "chatcmpl-tool-8219f583a0f5f6fe"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "[{\"content\": null, \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": [{\"id\": \"chatcmpl-tool-a5fd0b38ba2ee39c\", \"function\": {\"arguments\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"reason\\\": \\\"Customer ordered by mistake\\\"}\", \"name\": \"cancel_order\"}, \"type\": \"function\", \"index\": 0}], \"reasoning\": \"The order exists, status pending, price 300. Cancel with reason.\", \"reasoning_details\": [{\"format\": \"unknown\", \"index\": 0, \"text\": \"The order exists, status pending, price 300. Cancel with reason.\", \"type\": \"reasoning.text\"}]}]"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "chatcmpl-tool-a5fd0b38ba2ee39c"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "cancel_order"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\", \"reason\": \"Customer ordered by mistake\"}"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt",
+         "value": {
+          "intValue": "626"
+         }
+        },
+        {
+         "key": "llm.token_count.completion",
+         "value": {
+          "intValue": "75"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "LLM"
+         }
+        }
+       ],
+       "parentSpanId": "6713fc04b292335a"
+      },
+      {
+       "traceId": "22ead84d25067c96d203d9146bfc282d",
+       "spanId": "ee01f9e1be46305c",
+       "name": "cancel_order",
+       "startTimeUnixNano": "1793020955817705984",
+       "endTimeUnixNano": "1793020955818771968",
+       "attributes": [
+        {
+         "key": "tool.name",
+         "value": {
+          "stringValue": "cancel_order"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\", \"reason\": \"Customer ordered by mistake\"}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\", \"status\": \"cancelled\"}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "tool.description",
+         "value": {
+          "stringValue": "Cancel an order."
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "TOOL"
+         }
+        }
+       ],
+       "parentSpanId": "6713fc04b292335a"
+      },
+      {
+       "traceId": "22ead84d25067c96d203d9146bfc282d",
+       "spanId": "6713fc04b292335a",
+       "name": "turn",
+       "startTimeUnixNano": "1793020953990629888",
+       "endTimeUnixNano": "1793020955819041024",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "ca86787d698ce182"
+      },
+      {
+       "traceId": "22ead84d25067c96d203d9146bfc282d",
+       "spanId": "6d1350a0ddc8835a",
+       "name": "generation",
+       "startTimeUnixNano": "1793020955819680000",
+       "endTimeUnixNano": "1793020957253984000",
+       "attributes": [
+        {
+         "key": "llm.system",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.model_name",
+         "value": {
+          "stringValue": "deepseek/deepseek-v4.1-flash-1017"
+         }
+        },
+        {
+         "key": "llm.invocation_parameters",
+         "value": {
+          "stringValue": "{\"base_url\": \"https://aicredits.in/v1/\"}"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "[{\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"role\": \"system\"}, {\"role\": \"user\", \"content\": \"Please cancel order A1, I ordered it by mistake.\"}, {\"role\": \"assistant\", \"content\": \"I'll look up order A1 first to confirm the details before cancelling.\\n\\n\", \"tool_calls\": [{\"id\": \"chatcmpl-tool-8219f583a0f5f6fe\", \"type\": \"function\", \"function\": {\"name\": \"lookup_order\", \"arguments\": \"{\\\"order_id\\\": \\\"A1\\\"}\"}}]}, {\"role\": \"tool\", \"tool_call_id\": \"chatcmpl-tool-8219f583a0f5f6fe\", \"content\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"status\\\": \\\"pending\\\", \\\"customer_id\\\": \\\"C1\\\", \\\"price\\\": 300}\"}, {\"role\": \"assistant\", \"content\": null, \"tool_calls\": [{\"id\": \"chatcmpl-tool-a5fd0b38ba2ee39c\", \"type\": \"function\", \"function\": {\"name\": \"cancel_order\", \"arguments\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"reason\\\": \\\"Customer ordered by mistake\\\"}\"}}], \"reasoning\": \"The order exists, status pending, price 300. Cancel with reason.\"}, {\"role\": \"tool\", \"tool_call_id\": \"chatcmpl-tool-a5fd0b38ba2ee39c\", \"content\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"status\\\": \\\"cancelled\\\"}\"}]"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.role",
+         "value": {
+          "stringValue": "user"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.content",
+         "value": {
+          "stringValue": "Please cancel order A1, I ordered it by mistake."
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.content",
+         "value": {
+          "stringValue": "I'll look up order A1 first to confirm the details before cancelling.\n\n"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "chatcmpl-tool-8219f583a0f5f6fe"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.role",
+         "value": {
+          "stringValue": "tool"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.content",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\", \"status\": \"pending\", \"customer_id\": \"C1\", \"price\": 300}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.tool_call_id",
+         "value": {
+          "stringValue": "chatcmpl-tool-8219f583a0f5f6fe"
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.tool_calls.1.tool_call.id",
+         "value": {
+          "stringValue": "chatcmpl-tool-a5fd0b38ba2ee39c"
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.tool_calls.1.tool_call.function.name",
+         "value": {
+          "stringValue": "cancel_order"
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.tool_calls.1.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\", \"reason\": \"Customer ordered by mistake\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.5.message.role",
+         "value": {
+          "stringValue": "tool"
+         }
+        },
+        {
+         "key": "llm.input_messages.5.message.content",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\", \"status\": \"cancelled\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.5.message.tool_call_id",
+         "value": {
+          "stringValue": "chatcmpl-tool-a5fd0b38ba2ee39c"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "[{\"content\": \"Done \u2014 order **A1** has been cancelled.\\n\\n- **Order:** A1\\n- **Status:** Cancelled\\n- **Order value:** 300 (order was in \\\"pending\\\" status, so nothing had shipped)\\n\\nSince it was cancelled before processing, no refund action was needed on my end. Depending on your payment method, any authorization hold should drop off automatically \u2014 if you see a posted charge for this order on your statement, let me know and I can issue a refund.\", \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": null, \"reasoning\": null}]"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.content",
+         "value": {
+          "stringValue": "Done \u2014 order **A1** has been cancelled.\n\n- **Order:** A1\n- **Status:** Cancelled\n- **Order value:** 300 (order was in \"pending\" status, so nothing had shipped)\n\nSince it was cancelled before processing, no refund action was needed on my end. Depending on your payment method, any authorization hold should drop off automatically \u2014 if you see a posted charge for this order on your statement, let me know and I can issue a refund."
+         }
+        },
+        {
+         "key": "llm.token_count.prompt",
+         "value": {
+          "intValue": "728"
+         }
+        },
+        {
+         "key": "llm.token_count.completion",
+         "value": {
+          "intValue": "101"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "LLM"
+         }
+        }
+       ],
+       "parentSpanId": "47bde2d9552ec4a9"
+      },
+      {
+       "traceId": "22ead84d25067c96d203d9146bfc282d",
+       "spanId": "47bde2d9552ec4a9",
+       "name": "turn",
+       "startTimeUnixNano": "1793020955819149056",
+       "endTimeUnixNano": "1793020957256304128",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "ca86787d698ce182"
+      },
+      {
+       "traceId": "22ead84d25067c96d203d9146bfc282d",
+       "spanId": "ca86787d698ce182",
+       "name": "support_agent",
+       "startTimeUnixNano": "1793020952172212992",
+       "endTimeUnixNano": "1793020957257078016",
+       "attributes": [
+        {
+         "key": "graph.node.id",
+         "value": {
+          "stringValue": "support_agent"
+         }
+        },
+        {
+         "key": "agent.name",
+         "value": {
+          "stringValue": "support_agent"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "AGENT"
+         }
+        }
+       ],
+       "parentSpanId": "edea8e7fcd09bd5b"
+      },
+      {
+       "traceId": "22ead84d25067c96d203d9146bfc282d",
+       "spanId": "edea8e7fcd09bd5b",
+       "name": "Agent workflow",
+       "startTimeUnixNano": "1793020952171761920",
+       "endTimeUnixNano": "1793020957257261056",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "9698459c90857172"
+      },
+      {
+       "traceId": "22ead84d25067c96d203d9146bfc282d",
+       "spanId": "9698459c90857172",
+       "name": "Agent workflow",
+       "startTimeUnixNano": "1793020952171676800",
+       "endTimeUnixNano": "1793020957257353400",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "AGENT"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

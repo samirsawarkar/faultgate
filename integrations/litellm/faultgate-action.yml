@@ -1,0 +1,25 @@
+# Copy this file to .github/workflows/faultgate.yml in your project.
+# It gates a pull request using the saved LiteLLM trace and policy in this repository.
+name: Faultgate LiteLLM trace check
+
+on:
+  pull_request:
+    paths:
+      - "integrations/litellm/**"
+      - "integrations/litellm/faultgate-action.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  faultgate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the recorded clean run
+        uses: Faultline-lab/faultgate@main
+        with:
+          traces: integrations/litellm/traces/clean.json
+          policy: integrations/litellm/policy.json
+          format: auto
+          comment: "false"

@@ -1,0 +1,1339 @@
+{
+ "resourceSpans": [
+  {
+   "scopeSpans": [
+    {
+     "spans": [
+      {
+       "traceId": "55e6fa42a49190a0dd338b6319ee6147",
+       "spanId": "3573e81658b5f803",
+       "name": "ChatOpenAI",
+       "startTimeUnixNano": "1793020927733943040",
+       "endTimeUnixNano": "1793020929163883008",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"messages\": [[{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"SystemMessage\"], \"kwargs\": {\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"type\": \"system\", \"id\": \"02e4f0e6-41c4-486b-922c-7dc21594866a\"}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"Please cancel order A1, I ordered it by mistake.\", \"type\": \"human\", \"id\": \"c5537c53-2ae5-4c36-a7ce-4086ab15bd8e\"}}]]}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"generations\": [[{\"text\": \"I'll look up order A1 first to confirm its details.\\n\\n\", \"generation_info\": {\"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ChatGeneration\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"I'll look up order A1 first to confirm its details.\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 54, \"prompt_tokens\": 442, \"total_tokens\": 496, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.011158140921681601, \"cost_details\": {\"completion_cost_inr\": 0.0036628547706432004, \"prompt_cost_inr\": 0.007495286151038401}, \"is_byok\": false, \"latency_ms\": 747}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020928-cBfmqhCeTui0QXKBLzKp\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"id\": \"lc_run--01a17860-1ef5-7189-8d3f-b113e67a224a-0\", \"tool_calls\": [{\"name\": \"lookup_order\", \"args\": {\"order_id\": \"A1\"}, \"id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"type\": \"tool_call\"}], \"usage_metadata\": {\"input_tokens\": 442, \"output_tokens\": 54, \"total_tokens\": 496, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}, \"invalid_tool_calls\": []}}}]], \"llm_output\": {\"token_usage\": {\"completion_tokens\": 54, \"prompt_tokens\": 442, \"total_tokens\": 496, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.011158140921681601, \"cost_details\": {\"completion_cost_inr\": 0.0036628547706432004, \"prompt_cost_inr\": 0.007495286151038401}, \"is_byok\": false, \"latency_ms\": 747}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020928-cBfmqhCeTui0QXKBLzKp\"}, \"run\": null, \"type\": \"LLMResult\"}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.role",
+         "value": {
+          "stringValue": "user"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.content",
+         "value": {
+          "stringValue": "Please cancel order A1, I ordered it by mistake."
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.content",
+         "value": {
+          "stringValue": "I'll look up order A1 first to confirm its details.\n\n"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "chatcmpl-tool-85b2ddd25dbcc287"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\"}"
+         }
+        },
+        {
+         "key": "llm.invocation_parameters",
+         "value": {
+          "stringValue": "{\"model\": \"deepseek/deepseek-v4.1-flash-1017\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"stream\": false, \"_type\": \"openai-chat\", \"stop\": null, \"tools\": [{\"type\": \"function\", \"function\": {\"name\": \"lookup_order\", \"description\": \"Look up an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}}, \"required\": [\"order_id\"], \"type\": \"object\"}}}, {\"type\": \"function\", \"function\": {\"name\": \"cancel_order\", \"description\": \"Cancel an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}, \"reason\": {\"type\": \"string\"}}, \"required\": [\"order_id\", \"reason\"], \"type\": \"object\"}}}, {\"type\": \"function\", \"function\": {\"name\": \"issue_refund\", \"description\": \"Refund an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}, \"amount\": {\"type\": \"number\"}}, \"required\": [\"order_id\", \"amount\"], \"type\": \"object\"}}}]}"
+         }
+        },
+        {
+         "key": "llm.tools.0.tool.json_schema",
+         "value": {
+          "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"lookup_order\", \"description\": \"Look up an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}}, \"required\": [\"order_id\"], \"type\": \"object\"}}}"
+         }
+        },
+        {
+         "key": "llm.tools.1.tool.json_schema",
+         "value": {
+          "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"cancel_order\", \"description\": \"Cancel an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}, \"reason\": {\"type\": \"string\"}}, \"required\": [\"order_id\", \"reason\"], \"type\": \"object\"}}}"
+         }
+        },
+        {
+         "key": "llm.tools.2.tool.json_schema",
+         "value": {
+          "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"issue_refund\", \"description\": \"Refund an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}, \"amount\": {\"type\": \"number\"}}, \"required\": [\"order_id\", \"amount\"], \"type\": \"object\"}}}"
+         }
+        },
+        {
+         "key": "llm.provider",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.system",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.model_name",
+         "value": {
+          "stringValue": "deepseek/deepseek-v4.1-flash-1017"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt",
+         "value": {
+          "intValue": "442"
+         }
+        },
+        {
+         "key": "llm.token_count.completion",
+         "value": {
+          "intValue": "54"
+         }
+        },
+        {
+         "key": "llm.token_count.total",
+         "value": {
+          "intValue": "496"
+         }
+        },
+        {
+         "key": "llm.token_count.completion_details.audio",
+         "value": {
+          "intValue": "0"
+         }
+        },
+        {
+         "key": "llm.token_count.completion_details.reasoning",
+         "value": {
+          "intValue": "0"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt_details.audio",
+         "value": {
+          "intValue": "0"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt_details.cache_read",
+         "value": {
+          "intValue": "0"
+         }
+        },
+        {
+         "key": "llm.finish_reason",
+         "value": {
+          "stringValue": "tool_calls"
+         }
+        },
+        {
+         "key": "metadata",
+         "value": {
+          "stringValue": "{\"ls_integration\": \"langchain_chat_model\", \"langgraph_step\": 1, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:7a900e4a-e83b-1eda-1400-d990440acde6\", \"checkpoint_ns\": \"agent:7a900e4a-e83b-1eda-1400-d990440acde6\", \"ls_provider\": \"openai\", \"ls_model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"ls_model_type\": \"chat\", \"ls_temperature\": null, \"lc_versions\": {\"langchain-core\": \"1.7.0\", \"langchain-openai\": \"1.7.2\"}}"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "LLM"
+         }
+        }
+       ],
+       "parentSpanId": "df64202da9d26270"
+      },
+      {
+       "traceId": "55e6fa42a49190a0dd338b6319ee6147",
+       "spanId": "04a004a84da9177e",
+       "name": "tools_condition",
+       "startTimeUnixNano": "1793020929165026048",
+       "endTimeUnixNano": "1793020929165263872",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"messages\": [{\"type\": \"system\", \"data\": {\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"system\", \"name\": null, \"id\": \"02e4f0e6-41c4-486b-922c-7dc21594866a\"}}, {\"type\": \"human\", \"data\": {\"content\": \"Please cancel order A1, I ordered it by mistake.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"c5537c53-2ae5-4c36-a7ce-4086ab15bd8e\"}}, {\"type\": \"ai\", \"data\": {\"content\": \"I'll look up order A1 first to confirm its details.\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 54, \"prompt_tokens\": 442, \"total_tokens\": 496, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.011158140921681601, \"cost_details\": {\"completion_cost_inr\": 0.0036628547706432004, \"prompt_cost_inr\": 0.007495286151038401}, \"is_byok\": false, \"latency_ms\": 747}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020928-cBfmqhCeTui0QXKBLzKp\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-1ef5-7189-8d3f-b113e67a224a-0\", \"tool_calls\": [{\"name\": \"lookup_order\", \"args\": {\"order_id\": \"A1\"}, \"id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 442, \"output_tokens\": 54, \"total_tokens\": 496, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}}]}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "tools"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "metadata",
+         "value": {
+          "stringValue": "{\"ls_integration\": \"langgraph\", \"langgraph_step\": 1, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:7a900e4a-e83b-1eda-1400-d990440acde6\"}"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "df64202da9d26270"
+      },
+      {
+       "traceId": "55e6fa42a49190a0dd338b6319ee6147",
+       "spanId": "df64202da9d26270",
+       "name": "agent",
+       "startTimeUnixNano": "1793020927733393920",
+       "endTimeUnixNano": "1793020929165602816",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"messages\": [{\"type\": \"system\", \"data\": {\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"system\", \"name\": null, \"id\": \"02e4f0e6-41c4-486b-922c-7dc21594866a\"}}, {\"type\": \"human\", \"data\": {\"content\": \"Please cancel order A1, I ordered it by mistake.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"c5537c53-2ae5-4c36-a7ce-4086ab15bd8e\"}}]}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"messages\": [{\"type\": \"ai\", \"data\": {\"content\": \"I'll look up order A1 first to confirm its details.\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 54, \"prompt_tokens\": 442, \"total_tokens\": 496, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.011158140921681601, \"cost_details\": {\"completion_cost_inr\": 0.0036628547706432004, \"prompt_cost_inr\": 0.007495286151038401}, \"is_byok\": false, \"latency_ms\": 747}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020928-cBfmqhCeTui0QXKBLzKp\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-1ef5-7189-8d3f-b113e67a224a-0\", \"tool_calls\": [{\"name\": \"lookup_order\", \"args\": {\"order_id\": \"A1\"}, \"id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 442, \"output_tokens\": 54, \"total_tokens\": 496, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}}]}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "metadata",
+         "value": {
+          "stringValue": "{\"ls_integration\": \"langgraph\", \"langgraph_step\": 1, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:7a900e4a-e83b-1eda-1400-d990440acde6\"}"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "AGENT"
+         }
+        }
+       ],
+       "parentSpanId": "18ba58f8706b08dd"
+      },
+      {
+       "traceId": "55e6fa42a49190a0dd338b6319ee6147",
+       "spanId": "cf9419155ab61ffb",
+       "name": "lookup_order",
+       "startTimeUnixNano": "1793020929166956800",
+       "endTimeUnixNano": "1793020929167356928",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\"}"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\", \"status\": \"pending\", \"customer_id\": \"C1\", \"price\": 300}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "tool.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "tool.description",
+         "value": {
+          "stringValue": "Look up an order."
+         }
+        },
+        {
+         "key": "metadata",
+         "value": {
+          "stringValue": "{\"ls_integration\": \"langgraph\", \"langgraph_step\": 2, \"langgraph_node\": \"tools\", \"langgraph_triggers\": [\"branch:to:tools\"], \"langgraph_path\": [\"__pregel_pull\", \"tools\"], \"langgraph_checkpoint_ns\": \"tools:50059c2d-4109-33e4-84a4-873d31c36052\", \"checkpoint_ns\": \"tools:50059c2d-4109-33e4-84a4-873d31c36052\"}"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "TOOL"
+         }
+        }
+       ],
+       "parentSpanId": "133007c4ff0ee339"
+      },
+      {
+       "traceId": "55e6fa42a49190a0dd338b6319ee6147",
+       "spanId": "133007c4ff0ee339",
+       "name": "tools",
+       "startTimeUnixNano": "1793020929166300160",
+       "endTimeUnixNano": "1793020929167675136",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"messages\": [{\"type\": \"system\", \"data\": {\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"system\", \"name\": null, \"id\": \"02e4f0e6-41c4-486b-922c-7dc21594866a\"}}, {\"type\": \"human\", \"data\": {\"content\": \"Please cancel order A1, I ordered it by mistake.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"c5537c53-2ae5-4c36-a7ce-4086ab15bd8e\"}}, {\"type\": \"ai\", \"data\": {\"content\": \"I'll look up order A1 first to confirm its details.\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 54, \"prompt_tokens\": 442, \"total_tokens\": 496, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.011158140921681601, \"cost_details\": {\"completion_cost_inr\": 0.0036628547706432004, \"prompt_cost_inr\": 0.007495286151038401}, \"is_byok\": false, \"latency_ms\": 747}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020928-cBfmqhCeTui0QXKBLzKp\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-1ef5-7189-8d3f-b113e67a224a-0\", \"tool_calls\": [{\"name\": \"lookup_order\", \"args\": {\"order_id\": \"A1\"}, \"id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 442, \"output_tokens\": 54, \"total_tokens\": 496, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}}]}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"messages\": [{\"type\": \"tool\", \"data\": {\"content\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"status\\\": \\\"pending\\\", \\\"customer_id\\\": \\\"C1\\\", \\\"price\\\": 300}\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"lookup_order\", \"id\": null, \"tool_call_id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"artifact\": null, \"status\": \"success\"}}]}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "metadata",
+         "value": {
+          "stringValue": "{\"ls_integration\": \"langgraph\", \"langgraph_step\": 2, \"langgraph_node\": \"tools\", \"langgraph_triggers\": [\"branch:to:tools\"], \"langgraph_path\": [\"__pregel_pull\", \"tools\"], \"langgraph_checkpoint_ns\": \"tools:50059c2d-4109-33e4-84a4-873d31c36052\"}"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "18ba58f8706b08dd"
+      },
+      {
+       "traceId": "55e6fa42a49190a0dd338b6319ee6147",
+       "spanId": "90d1b1fdd4405f97",
+       "name": "ChatOpenAI",
+       "startTimeUnixNano": "1793020929168366848",
+       "endTimeUnixNano": "1793020931126893056",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"messages\": [[{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"SystemMessage\"], \"kwargs\": {\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"type\": \"system\", \"id\": \"02e4f0e6-41c4-486b-922c-7dc21594866a\"}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"Please cancel order A1, I ordered it by mistake.\", \"type\": \"human\", \"id\": \"c5537c53-2ae5-4c36-a7ce-4086ab15bd8e\"}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"I'll look up order A1 first to confirm its details.\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 54, \"prompt_tokens\": 442, \"total_tokens\": 496, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.011158140921681601, \"cost_details\": {\"completion_cost_inr\": 0.0036628547706432004, \"prompt_cost_inr\": 0.007495286151038401}, \"is_byok\": false, \"latency_ms\": 747}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020928-cBfmqhCeTui0QXKBLzKp\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"id\": \"lc_run--01a17860-1ef5-7189-8d3f-b113e67a224a-0\", \"tool_calls\": [{\"name\": \"lookup_order\", \"args\": {\"order_id\": \"A1\"}, \"id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"type\": \"tool_call\"}], \"usage_metadata\": {\"input_tokens\": 442, \"output_tokens\": 54, \"total_tokens\": 496, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}, \"invalid_tool_calls\": []}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"ToolMessage\"], \"kwargs\": {\"content\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"status\\\": \\\"pending\\\", \\\"customer_id\\\": \\\"C1\\\", \\\"price\\\": 300}\", \"type\": \"tool\", \"name\": \"lookup_order\", \"id\": \"5ab5b8a0-4787-445d-856e-ca6eea6e55cf\", \"tool_call_id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"status\": \"success\"}}]]}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"generations\": [[{\"text\": \"Order A1 is found \u2014 it's still pending (price $300), so it can be cancelled. I'll go ahead and cancel it now.\\n\\n\\n\\n\", \"generation_info\": {\"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ChatGeneration\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"Order A1 is found \u2014 it's still pending (price $300), so it can be cancelled. I'll go ahead and cancel it now.\\n\\n\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 142, \"prompt_tokens\": 534, \"total_tokens\": 676, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 53, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 384, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.012305835416483137, \"cost_details\": {\"completion_cost_inr\": 0.009631951433913601, \"prompt_cost_inr\": 0.002673883982569536}, \"is_byok\": false, \"latency_ms\": 1672}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020929-XfPWSllH9c116ruyEkqC\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"id\": \"lc_run--01a17860-2490-7286-959c-3338fb0de901-0\", \"tool_calls\": [{\"name\": \"cancel_order\", \"args\": {\"order_id\": \"A1\", \"reason\": \"Customer ordered by mistake\"}, \"id\": \"chatcmpl-tool-b7d5684107664576\", \"type\": \"tool_call\"}], \"usage_metadata\": {\"input_tokens\": 534, \"output_tokens\": 142, \"total_tokens\": 676, \"input_token_details\": {\"audio\": 0, \"cache_read\": 384, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 53}}, \"invalid_tool_calls\": []}}}]], \"llm_output\": {\"token_usage\": {\"completion_tokens\": 142, \"prompt_tokens\": 534, \"total_tokens\": 676, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 53, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 384, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.012305835416483137, \"cost_details\": {\"completion_cost_inr\": 0.009631951433913601, \"prompt_cost_inr\": 0.002673883982569536}, \"is_byok\": false, \"latency_ms\": 1672}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020929-XfPWSllH9c116ruyEkqC\"}, \"run\": null, \"type\": \"LLMResult\"}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.role",
+         "value": {
+          "stringValue": "user"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.content",
+         "value": {
+          "stringValue": "Please cancel order A1, I ordered it by mistake."
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.content",
+         "value": {
+          "stringValue": "I'll look up order A1 first to confirm its details.\n\n"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "chatcmpl-tool-85b2ddd25dbcc287"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.role",
+         "value": {
+          "stringValue": "tool"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.content",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\", \"status\": \"pending\", \"customer_id\": \"C1\", \"price\": 300}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.tool_call_id",
+         "value": {
+          "stringValue": "chatcmpl-tool-85b2ddd25dbcc287"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.content",
+         "value": {
+          "stringValue": "Order A1 is found \u2014 it's still pending (price $300), so it can be cancelled. I'll go ahead and cancel it now.\n\n\n\n"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "chatcmpl-tool-b7d5684107664576"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "cancel_order"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\", \"reason\": \"Customer ordered by mistake\"}"
+         }
+        },
+        {
+         "key": "llm.invocation_parameters",
+         "value": {
+          "stringValue": "{\"model\": \"deepseek/deepseek-v4.1-flash-1017\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"stream\": false, \"_type\": \"openai-chat\", \"stop\": null, \"tools\": [{\"type\": \"function\", \"function\": {\"name\": \"lookup_order\", \"description\": \"Look up an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}}, \"required\": [\"order_id\"], \"type\": \"object\"}}}, {\"type\": \"function\", \"function\": {\"name\": \"cancel_order\", \"description\": \"Cancel an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}, \"reason\": {\"type\": \"string\"}}, \"required\": [\"order_id\", \"reason\"], \"type\": \"object\"}}}, {\"type\": \"function\", \"function\": {\"name\": \"issue_refund\", \"description\": \"Refund an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}, \"amount\": {\"type\": \"number\"}}, \"required\": [\"order_id\", \"amount\"], \"type\": \"object\"}}}]}"
+         }
+        },
+        {
+         "key": "llm.tools.0.tool.json_schema",
+         "value": {
+          "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"lookup_order\", \"description\": \"Look up an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}}, \"required\": [\"order_id\"], \"type\": \"object\"}}}"
+         }
+        },
+        {
+         "key": "llm.tools.1.tool.json_schema",
+         "value": {
+          "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"cancel_order\", \"description\": \"Cancel an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}, \"reason\": {\"type\": \"string\"}}, \"required\": [\"order_id\", \"reason\"], \"type\": \"object\"}}}"
+         }
+        },
+        {
+         "key": "llm.tools.2.tool.json_schema",
+         "value": {
+          "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"issue_refund\", \"description\": \"Refund an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}, \"amount\": {\"type\": \"number\"}}, \"required\": [\"order_id\", \"amount\"], \"type\": \"object\"}}}"
+         }
+        },
+        {
+         "key": "llm.provider",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.system",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.model_name",
+         "value": {
+          "stringValue": "deepseek/deepseek-v4.1-flash-1017"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt",
+         "value": {
+          "intValue": "534"
+         }
+        },
+        {
+         "key": "llm.token_count.completion",
+         "value": {
+          "intValue": "142"
+         }
+        },
+        {
+         "key": "llm.token_count.total",
+         "value": {
+          "intValue": "676"
+         }
+        },
+        {
+         "key": "llm.token_count.completion_details.audio",
+         "value": {
+          "intValue": "0"
+         }
+        },
+        {
+         "key": "llm.token_count.completion_details.reasoning",
+         "value": {
+          "intValue": "53"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt_details.audio",
+         "value": {
+          "intValue": "0"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt_details.cache_read",
+         "value": {
+          "intValue": "384"
+         }
+        },
+        {
+         "key": "llm.finish_reason",
+         "value": {
+          "stringValue": "tool_calls"
+         }
+        },
+        {
+         "key": "metadata",
+         "value": {
+          "stringValue": "{\"ls_integration\": \"langchain_chat_model\", \"langgraph_step\": 3, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:44721361-af81-7d59-cc46-3cd7c6092e27\", \"checkpoint_ns\": \"agent:44721361-af81-7d59-cc46-3cd7c6092e27\", \"ls_provider\": \"openai\", \"ls_model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"ls_model_type\": \"chat\", \"ls_temperature\": null, \"lc_versions\": {\"langchain-core\": \"1.7.0\", \"langchain-openai\": \"1.7.2\"}}"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "LLM"
+         }
+        }
+       ],
+       "parentSpanId": "7e0b44067d7548c4"
+      },
+      {
+       "traceId": "55e6fa42a49190a0dd338b6319ee6147",
+       "spanId": "d67c66a17078ec35",
+       "name": "tools_condition",
+       "startTimeUnixNano": "1793020931130273024",
+       "endTimeUnixNano": "1793020931130676992",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"messages\": [{\"type\": \"system\", \"data\": {\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"system\", \"name\": null, \"id\": \"02e4f0e6-41c4-486b-922c-7dc21594866a\"}}, {\"type\": \"human\", \"data\": {\"content\": \"Please cancel order A1, I ordered it by mistake.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"c5537c53-2ae5-4c36-a7ce-4086ab15bd8e\"}}, {\"type\": \"ai\", \"data\": {\"content\": \"I'll look up order A1 first to confirm its details.\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 54, \"prompt_tokens\": 442, \"total_tokens\": 496, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.011158140921681601, \"cost_details\": {\"completion_cost_inr\": 0.0036628547706432004, \"prompt_cost_inr\": 0.007495286151038401}, \"is_byok\": false, \"latency_ms\": 747}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020928-cBfmqhCeTui0QXKBLzKp\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-1ef5-7189-8d3f-b113e67a224a-0\", \"tool_calls\": [{\"name\": \"lookup_order\", \"args\": {\"order_id\": \"A1\"}, \"id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 442, \"output_tokens\": 54, \"total_tokens\": 496, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}}, {\"type\": \"tool\", \"data\": {\"content\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"status\\\": \\\"pending\\\", \\\"customer_id\\\": \\\"C1\\\", \\\"price\\\": 300}\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"lookup_order\", \"id\": \"5ab5b8a0-4787-445d-856e-ca6eea6e55cf\", \"tool_call_id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"artifact\": null, \"status\": \"success\"}}, {\"type\": \"ai\", \"data\": {\"content\": \"Order A1 is found \u2014 it's still pending (price $300), so it can be cancelled. I'll go ahead and cancel it now.\\n\\n\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 142, \"prompt_tokens\": 534, \"total_tokens\": 676, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 53, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 384, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.012305835416483137, \"cost_details\": {\"completion_cost_inr\": 0.009631951433913601, \"prompt_cost_inr\": 0.002673883982569536}, \"is_byok\": false, \"latency_ms\": 1672}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020929-XfPWSllH9c116ruyEkqC\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-2490-7286-959c-3338fb0de901-0\", \"tool_calls\": [{\"name\": \"cancel_order\", \"args\": {\"order_id\": \"A1\", \"reason\": \"Customer ordered by mistake\"}, \"id\": \"chatcmpl-tool-b7d5684107664576\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 534, \"output_tokens\": 142, \"total_tokens\": 676, \"input_token_details\": {\"audio\": 0, \"cache_read\": 384, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 53}}}}]}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "tools"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "metadata",
+         "value": {
+          "stringValue": "{\"ls_integration\": \"langgraph\", \"langgraph_step\": 3, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:44721361-af81-7d59-cc46-3cd7c6092e27\"}"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "7e0b44067d7548c4"
+      },
+      {
+       "traceId": "55e6fa42a49190a0dd338b6319ee6147",
+       "spanId": "7e0b44067d7548c4",
+       "name": "agent",
+       "startTimeUnixNano": "1793020929168103936",
+       "endTimeUnixNano": "1793020931131404032",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"messages\": [{\"type\": \"system\", \"data\": {\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"system\", \"name\": null, \"id\": \"02e4f0e6-41c4-486b-922c-7dc21594866a\"}}, {\"type\": \"human\", \"data\": {\"content\": \"Please cancel order A1, I ordered it by mistake.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"c5537c53-2ae5-4c36-a7ce-4086ab15bd8e\"}}, {\"type\": \"ai\", \"data\": {\"content\": \"I'll look up order A1 first to confirm its details.\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 54, \"prompt_tokens\": 442, \"total_tokens\": 496, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.011158140921681601, \"cost_details\": {\"completion_cost_inr\": 0.0036628547706432004, \"prompt_cost_inr\": 0.007495286151038401}, \"is_byok\": false, \"latency_ms\": 747}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020928-cBfmqhCeTui0QXKBLzKp\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-1ef5-7189-8d3f-b113e67a224a-0\", \"tool_calls\": [{\"name\": \"lookup_order\", \"args\": {\"order_id\": \"A1\"}, \"id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 442, \"output_tokens\": 54, \"total_tokens\": 496, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}}, {\"type\": \"tool\", \"data\": {\"content\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"status\\\": \\\"pending\\\", \\\"customer_id\\\": \\\"C1\\\", \\\"price\\\": 300}\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"lookup_order\", \"id\": \"5ab5b8a0-4787-445d-856e-ca6eea6e55cf\", \"tool_call_id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"artifact\": null, \"status\": \"success\"}}]}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"messages\": [{\"type\": \"ai\", \"data\": {\"content\": \"Order A1 is found \u2014 it's still pending (price $300), so it can be cancelled. I'll go ahead and cancel it now.\\n\\n\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 142, \"prompt_tokens\": 534, \"total_tokens\": 676, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 53, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 384, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.012305835416483137, \"cost_details\": {\"completion_cost_inr\": 0.009631951433913601, \"prompt_cost_inr\": 0.002673883982569536}, \"is_byok\": false, \"latency_ms\": 1672}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020929-XfPWSllH9c116ruyEkqC\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-2490-7286-959c-3338fb0de901-0\", \"tool_calls\": [{\"name\": \"cancel_order\", \"args\": {\"order_id\": \"A1\", \"reason\": \"Customer ordered by mistake\"}, \"id\": \"chatcmpl-tool-b7d5684107664576\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 534, \"output_tokens\": 142, \"total_tokens\": 676, \"input_token_details\": {\"audio\": 0, \"cache_read\": 384, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 53}}}}]}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "metadata",
+         "value": {
+          "stringValue": "{\"ls_integration\": \"langgraph\", \"langgraph_step\": 3, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:44721361-af81-7d59-cc46-3cd7c6092e27\"}"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "AGENT"
+         }
+        }
+       ],
+       "parentSpanId": "18ba58f8706b08dd"
+      },
+      {
+       "traceId": "55e6fa42a49190a0dd338b6319ee6147",
+       "spanId": "695ee1a323582c03",
+       "name": "cancel_order",
+       "startTimeUnixNano": "1793020931133529856",
+       "endTimeUnixNano": "1793020931134221056",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\", \"reason\": \"Customer ordered by mistake\"}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\", \"status\": \"cancelled\"}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "tool.name",
+         "value": {
+          "stringValue": "cancel_order"
+         }
+        },
+        {
+         "key": "tool.description",
+         "value": {
+          "stringValue": "Cancel an order."
+         }
+        },
+        {
+         "key": "metadata",
+         "value": {
+          "stringValue": "{\"ls_integration\": \"langgraph\", \"langgraph_step\": 4, \"langgraph_node\": \"tools\", \"langgraph_triggers\": [\"branch:to:tools\"], \"langgraph_path\": [\"__pregel_pull\", \"tools\"], \"langgraph_checkpoint_ns\": \"tools:08484de9-da49-ce99-5688-00c6b6e023f6\", \"checkpoint_ns\": \"tools:08484de9-da49-ce99-5688-00c6b6e023f6\"}"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "TOOL"
+         }
+        }
+       ],
+       "parentSpanId": "de8b1546c74996f9"
+      },
+      {
+       "traceId": "55e6fa42a49190a0dd338b6319ee6147",
+       "spanId": "de8b1546c74996f9",
+       "name": "tools",
+       "startTimeUnixNano": "1793020931132393984",
+       "endTimeUnixNano": "1793020931134712064",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"messages\": [{\"type\": \"system\", \"data\": {\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"system\", \"name\": null, \"id\": \"02e4f0e6-41c4-486b-922c-7dc21594866a\"}}, {\"type\": \"human\", \"data\": {\"content\": \"Please cancel order A1, I ordered it by mistake.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"c5537c53-2ae5-4c36-a7ce-4086ab15bd8e\"}}, {\"type\": \"ai\", \"data\": {\"content\": \"I'll look up order A1 first to confirm its details.\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 54, \"prompt_tokens\": 442, \"total_tokens\": 496, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.011158140921681601, \"cost_details\": {\"completion_cost_inr\": 0.0036628547706432004, \"prompt_cost_inr\": 0.007495286151038401}, \"is_byok\": false, \"latency_ms\": 747}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020928-cBfmqhCeTui0QXKBLzKp\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-1ef5-7189-8d3f-b113e67a224a-0\", \"tool_calls\": [{\"name\": \"lookup_order\", \"args\": {\"order_id\": \"A1\"}, \"id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 442, \"output_tokens\": 54, \"total_tokens\": 496, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}}, {\"type\": \"tool\", \"data\": {\"content\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"status\\\": \\\"pending\\\", \\\"customer_id\\\": \\\"C1\\\", \\\"price\\\": 300}\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"lookup_order\", \"id\": \"5ab5b8a0-4787-445d-856e-ca6eea6e55cf\", \"tool_call_id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"artifact\": null, \"status\": \"success\"}}, {\"type\": \"ai\", \"data\": {\"content\": \"Order A1 is found \u2014 it's still pending (price $300), so it can be cancelled. I'll go ahead and cancel it now.\\n\\n\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 142, \"prompt_tokens\": 534, \"total_tokens\": 676, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 53, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 384, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.012305835416483137, \"cost_details\": {\"completion_cost_inr\": 0.009631951433913601, \"prompt_cost_inr\": 0.002673883982569536}, \"is_byok\": false, \"latency_ms\": 1672}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020929-XfPWSllH9c116ruyEkqC\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-2490-7286-959c-3338fb0de901-0\", \"tool_calls\": [{\"name\": \"cancel_order\", \"args\": {\"order_id\": \"A1\", \"reason\": \"Customer ordered by mistake\"}, \"id\": \"chatcmpl-tool-b7d5684107664576\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 534, \"output_tokens\": 142, \"total_tokens\": 676, \"input_token_details\": {\"audio\": 0, \"cache_read\": 384, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 53}}}}]}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"messages\": [{\"type\": \"tool\", \"data\": {\"content\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"status\\\": \\\"cancelled\\\"}\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"cancel_order\", \"id\": null, \"tool_call_id\": \"chatcmpl-tool-b7d5684107664576\", \"artifact\": null, \"status\": \"success\"}}]}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "metadata",
+         "value": {
+          "stringValue": "{\"ls_integration\": \"langgraph\", \"langgraph_step\": 4, \"langgraph_node\": \"tools\", \"langgraph_triggers\": [\"branch:to:tools\"], \"langgraph_path\": [\"__pregel_pull\", \"tools\"], \"langgraph_checkpoint_ns\": \"tools:08484de9-da49-ce99-5688-00c6b6e023f6\"}"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "18ba58f8706b08dd"
+      },
+      {
+       "traceId": "55e6fa42a49190a0dd338b6319ee6147",
+       "spanId": "5eaf3be81343c8c4",
+       "name": "ChatOpenAI",
+       "startTimeUnixNano": "1793020931135812096",
+       "endTimeUnixNano": "1793020932300080128",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"messages\": [[{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"SystemMessage\"], \"kwargs\": {\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"type\": \"system\", \"id\": \"02e4f0e6-41c4-486b-922c-7dc21594866a\"}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"Please cancel order A1, I ordered it by mistake.\", \"type\": \"human\", \"id\": \"c5537c53-2ae5-4c36-a7ce-4086ab15bd8e\"}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"I'll look up order A1 first to confirm its details.\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 54, \"prompt_tokens\": 442, \"total_tokens\": 496, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.011158140921681601, \"cost_details\": {\"completion_cost_inr\": 0.0036628547706432004, \"prompt_cost_inr\": 0.007495286151038401}, \"is_byok\": false, \"latency_ms\": 747}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020928-cBfmqhCeTui0QXKBLzKp\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"id\": \"lc_run--01a17860-1ef5-7189-8d3f-b113e67a224a-0\", \"tool_calls\": [{\"name\": \"lookup_order\", \"args\": {\"order_id\": \"A1\"}, \"id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"type\": \"tool_call\"}], \"usage_metadata\": {\"input_tokens\": 442, \"output_tokens\": 54, \"total_tokens\": 496, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}, \"invalid_tool_calls\": []}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"ToolMessage\"], \"kwargs\": {\"content\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"status\\\": \\\"pending\\\", \\\"customer_id\\\": \\\"C1\\\", \\\"price\\\": 300}\", \"type\": \"tool\", \"name\": \"lookup_order\", \"id\": \"5ab5b8a0-4787-445d-856e-ca6eea6e55cf\", \"tool_call_id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"status\": \"success\"}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"Order A1 is found \u2014 it's still pending (price $300), so it can be cancelled. I'll go ahead and cancel it now.\\n\\n\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 142, \"prompt_tokens\": 534, \"total_tokens\": 676, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 53, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 384, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.012305835416483137, \"cost_details\": {\"completion_cost_inr\": 0.009631951433913601, \"prompt_cost_inr\": 0.002673883982569536}, \"is_byok\": false, \"latency_ms\": 1672}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020929-XfPWSllH9c116ruyEkqC\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"id\": \"lc_run--01a17860-2490-7286-959c-3338fb0de901-0\", \"tool_calls\": [{\"name\": \"cancel_order\", \"args\": {\"order_id\": \"A1\", \"reason\": \"Customer ordered by mistake\"}, \"id\": \"chatcmpl-tool-b7d5684107664576\", \"type\": \"tool_call\"}], \"usage_metadata\": {\"input_tokens\": 534, \"output_tokens\": 142, \"total_tokens\": 676, \"input_token_details\": {\"audio\": 0, \"cache_read\": 384, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 53}}, \"invalid_tool_calls\": []}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"ToolMessage\"], \"kwargs\": {\"content\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"status\\\": \\\"cancelled\\\"}\", \"type\": \"tool\", \"name\": \"cancel_order\", \"id\": \"115b83a2-fd75-4da4-b21c-8f077809f850\", \"tool_call_id\": \"chatcmpl-tool-b7d5684107664576\", \"status\": \"success\"}}]]}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"generations\": [[{\"text\": \"Done! Order A1 has been cancelled successfully.\\n\\nHere's a summary:\\n- **Order:** A1\\n- **Original status:** Pending\\n- **Price:** $300\\n- **New status:** Cancelled\\n- **Reason:** Customer ordered by mistake\\n\\nSince the order was still pending (not yet charged or shipped), there's nothing further needed on your end. You should receive a confirmation shortly. Is there anything else I can help you with?\", \"generation_info\": {\"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ChatGeneration\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"Done! Order A1 has been cancelled successfully.\\n\\nHere's a summary:\\n- **Order:** A1\\n- **Original status:** Pending\\n- **Price:** $300\\n- **New status:** Cancelled\\n- **Reason:** Customer ordered by mistake\\n\\nSince the order was still pending (not yet charged or shipped), there's nothing further needed on your end. You should receive a confirmation shortly. Is there anything else I can help you with?\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 95, \"prompt_tokens\": 651, \"total_tokens\": 746, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 512, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.008974672494514849, \"cost_details\": {\"completion_cost_inr\": 0.0064439111705760005, \"prompt_cost_inr\": 0.0025307613239388483}, \"is_byok\": false, \"latency_ms\": 867}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020931-jkdRQawrD9AcyraiYRD4\", \"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ai\", \"id\": \"lc_run--01a17860-2c3f-75ef-b11f-202bc5d845c2-0\", \"usage_metadata\": {\"input_tokens\": 651, \"output_tokens\": 95, \"total_tokens\": 746, \"input_token_details\": {\"audio\": 0, \"cache_read\": 512, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}, \"tool_calls\": [], \"invalid_tool_calls\": []}}}]], \"llm_output\": {\"token_usage\": {\"completion_tokens\": 95, \"prompt_tokens\": 651, \"total_tokens\": 746, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 512, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.008974672494514849, \"cost_details\": {\"completion_cost_inr\": 0.0064439111705760005, \"prompt_cost_inr\": 0.0025307613239388483}, \"is_byok\": false, \"latency_ms\": 867}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020931-jkdRQawrD9AcyraiYRD4\"}, \"run\": null, \"type\": \"LLMResult\"}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.role",
+         "value": {
+          "stringValue": "user"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.content",
+         "value": {
+          "stringValue": "Please cancel order A1, I ordered it by mistake."
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.content",
+         "value": {
+          "stringValue": "I'll look up order A1 first to confirm its details.\n\n"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "chatcmpl-tool-85b2ddd25dbcc287"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.role",
+         "value": {
+          "stringValue": "tool"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.content",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\", \"status\": \"pending\", \"customer_id\": \"C1\", \"price\": 300}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.tool_call_id",
+         "value": {
+          "stringValue": "chatcmpl-tool-85b2ddd25dbcc287"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.content",
+         "value": {
+          "stringValue": "Order A1 is found \u2014 it's still pending (price $300), so it can be cancelled. I'll go ahead and cancel it now.\n\n\n\n"
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "chatcmpl-tool-b7d5684107664576"
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "cancel_order"
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\", \"reason\": \"Customer ordered by mistake\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.5.message.role",
+         "value": {
+          "stringValue": "tool"
+         }
+        },
+        {
+         "key": "llm.input_messages.5.message.content",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\", \"status\": \"cancelled\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.5.message.tool_call_id",
+         "value": {
+          "stringValue": "chatcmpl-tool-b7d5684107664576"
+         }
+        },
+        {
+         "key": "llm.input_messages.5.message.name",
+         "value": {
+          "stringValue": "cancel_order"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.content",
+         "value": {
+          "stringValue": "Done! Order A1 has been cancelled successfully.\n\nHere's a summary:\n- **Order:** A1\n- **Original status:** Pending\n- **Price:** $300\n- **New status:** Cancelled\n- **Reason:** Customer ordered by mistake\n\nSince the order was still pending (not yet charged or shipped), there's nothing further needed on your end. You should receive a confirmation shortly. Is there anything else I can help you with?"
+         }
+        },
+        {
+         "key": "llm.invocation_parameters",
+         "value": {
+          "stringValue": "{\"model\": \"deepseek/deepseek-v4.1-flash-1017\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"stream\": false, \"_type\": \"openai-chat\", \"stop\": null, \"tools\": [{\"type\": \"function\", \"function\": {\"name\": \"lookup_order\", \"description\": \"Look up an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}}, \"required\": [\"order_id\"], \"type\": \"object\"}}}, {\"type\": \"function\", \"function\": {\"name\": \"cancel_order\", \"description\": \"Cancel an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}, \"reason\": {\"type\": \"string\"}}, \"required\": [\"order_id\", \"reason\"], \"type\": \"object\"}}}, {\"type\": \"function\", \"function\": {\"name\": \"issue_refund\", \"description\": \"Refund an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}, \"amount\": {\"type\": \"number\"}}, \"required\": [\"order_id\", \"amount\"], \"type\": \"object\"}}}]}"
+         }
+        },
+        {
+         "key": "llm.tools.0.tool.json_schema",
+         "value": {
+          "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"lookup_order\", \"description\": \"Look up an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}}, \"required\": [\"order_id\"], \"type\": \"object\"}}}"
+         }
+        },
+        {
+         "key": "llm.tools.1.tool.json_schema",
+         "value": {
+          "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"cancel_order\", \"description\": \"Cancel an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}, \"reason\": {\"type\": \"string\"}}, \"required\": [\"order_id\", \"reason\"], \"type\": \"object\"}}}"
+         }
+        },
+        {
+         "key": "llm.tools.2.tool.json_schema",
+         "value": {
+          "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"issue_refund\", \"description\": \"Refund an order.\", \"parameters\": {\"properties\": {\"order_id\": {\"type\": \"string\"}, \"amount\": {\"type\": \"number\"}}, \"required\": [\"order_id\", \"amount\"], \"type\": \"object\"}}}"
+         }
+        },
+        {
+         "key": "llm.provider",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.system",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.model_name",
+         "value": {
+          "stringValue": "deepseek/deepseek-v4.1-flash-1017"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt",
+         "value": {
+          "intValue": "651"
+         }
+        },
+        {
+         "key": "llm.token_count.completion",
+         "value": {
+          "intValue": "95"
+         }
+        },
+        {
+         "key": "llm.token_count.total",
+         "value": {
+          "intValue": "746"
+         }
+        },
+        {
+         "key": "llm.token_count.completion_details.audio",
+         "value": {
+          "intValue": "0"
+         }
+        },
+        {
+         "key": "llm.token_count.completion_details.reasoning",
+         "value": {
+          "intValue": "0"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt_details.audio",
+         "value": {
+          "intValue": "0"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt_details.cache_read",
+         "value": {
+          "intValue": "512"
+         }
+        },
+        {
+         "key": "llm.finish_reason",
+         "value": {
+          "stringValue": "stop"
+         }
+        },
+        {
+         "key": "metadata",
+         "value": {
+          "stringValue": "{\"ls_integration\": \"langchain_chat_model\", \"langgraph_step\": 5, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:15709129-c181-a36f-e8b0-be3966b41982\", \"checkpoint_ns\": \"agent:15709129-c181-a36f-e8b0-be3966b41982\", \"ls_provider\": \"openai\", \"ls_model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"ls_model_type\": \"chat\", \"ls_temperature\": null, \"lc_versions\": {\"langchain-core\": \"1.7.0\", \"langchain-openai\": \"1.7.2\"}}"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "LLM"
+         }
+        }
+       ],
+       "parentSpanId": "db71d6635e2bfd9d"
+      },
+      {
+       "traceId": "55e6fa42a49190a0dd338b6319ee6147",
+       "spanId": "b9a1c2969d6d9401",
+       "name": "tools_condition",
+       "startTimeUnixNano": "1793020932300699904",
+       "endTimeUnixNano": "1793020932300905984",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"messages\": [{\"type\": \"system\", \"data\": {\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"system\", \"name\": null, \"id\": \"02e4f0e6-41c4-486b-922c-7dc21594866a\"}}, {\"type\": \"human\", \"data\": {\"content\": \"Please cancel order A1, I ordered it by mistake.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"c5537c53-2ae5-4c36-a7ce-4086ab15bd8e\"}}, {\"type\": \"ai\", \"data\": {\"content\": \"I'll look up order A1 first to confirm its details.\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 54, \"prompt_tokens\": 442, \"total_tokens\": 496, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.011158140921681601, \"cost_details\": {\"completion_cost_inr\": 0.0036628547706432004, \"prompt_cost_inr\": 0.007495286151038401}, \"is_byok\": false, \"latency_ms\": 747}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020928-cBfmqhCeTui0QXKBLzKp\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-1ef5-7189-8d3f-b113e67a224a-0\", \"tool_calls\": [{\"name\": \"lookup_order\", \"args\": {\"order_id\": \"A1\"}, \"id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 442, \"output_tokens\": 54, \"total_tokens\": 496, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}}, {\"type\": \"tool\", \"data\": {\"content\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"status\\\": \\\"pending\\\", \\\"customer_id\\\": \\\"C1\\\", \\\"price\\\": 300}\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"lookup_order\", \"id\": \"5ab5b8a0-4787-445d-856e-ca6eea6e55cf\", \"tool_call_id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"artifact\": null, \"status\": \"success\"}}, {\"type\": \"ai\", \"data\": {\"content\": \"Order A1 is found \u2014 it's still pending (price $300), so it can be cancelled. I'll go ahead and cancel it now.\\n\\n\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 142, \"prompt_tokens\": 534, \"total_tokens\": 676, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 53, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 384, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.012305835416483137, \"cost_details\": {\"completion_cost_inr\": 0.009631951433913601, \"prompt_cost_inr\": 0.002673883982569536}, \"is_byok\": false, \"latency_ms\": 1672}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020929-XfPWSllH9c116ruyEkqC\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-2490-7286-959c-3338fb0de901-0\", \"tool_calls\": [{\"name\": \"cancel_order\", \"args\": {\"order_id\": \"A1\", \"reason\": \"Customer ordered by mistake\"}, \"id\": \"chatcmpl-tool-b7d5684107664576\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 534, \"output_tokens\": 142, \"total_tokens\": 676, \"input_token_details\": {\"audio\": 0, \"cache_read\": 384, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 53}}}}, {\"type\": \"tool\", \"data\": {\"content\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"status\\\": \\\"cancelled\\\"}\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"cancel_order\", \"id\": \"115b83a2-fd75-4da4-b21c-8f077809f850\", \"tool_call_id\": \"chatcmpl-tool-b7d5684107664576\", \"artifact\": null, \"status\": \"success\"}}, {\"type\": \"ai\", \"data\": {\"content\": \"Done! Order A1 has been cancelled successfully.\\n\\nHere's a summary:\\n- **Order:** A1\\n- **Original status:** Pending\\n- **Price:** $300\\n- **New status:** Cancelled\\n- **Reason:** Customer ordered by mistake\\n\\nSince the order was still pending (not yet charged or shipped), there's nothing further needed on your end. You should receive a confirmation shortly. Is there anything else I can help you with?\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 95, \"prompt_tokens\": 651, \"total_tokens\": 746, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 512, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.008974672494514849, \"cost_details\": {\"completion_cost_inr\": 0.0064439111705760005, \"prompt_cost_inr\": 0.0025307613239388483}, \"is_byok\": false, \"latency_ms\": 867}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020931-jkdRQawrD9AcyraiYRD4\", \"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-2c3f-75ef-b11f-202bc5d845c2-0\", \"tool_calls\": [], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 651, \"output_tokens\": 95, \"total_tokens\": 746, \"input_token_details\": {\"audio\": 0, \"cache_read\": 512, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}}]}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "__end__"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "metadata",
+         "value": {
+          "stringValue": "{\"ls_integration\": \"langgraph\", \"langgraph_step\": 5, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:15709129-c181-a36f-e8b0-be3966b41982\"}"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "db71d6635e2bfd9d"
+      },
+      {
+       "traceId": "55e6fa42a49190a0dd338b6319ee6147",
+       "spanId": "db71d6635e2bfd9d",
+       "name": "agent",
+       "startTimeUnixNano": "1793020931135442944",
+       "endTimeUnixNano": "1793020932301193984",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"messages\": [{\"type\": \"system\", \"data\": {\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"system\", \"name\": null, \"id\": \"02e4f0e6-41c4-486b-922c-7dc21594866a\"}}, {\"type\": \"human\", \"data\": {\"content\": \"Please cancel order A1, I ordered it by mistake.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"c5537c53-2ae5-4c36-a7ce-4086ab15bd8e\"}}, {\"type\": \"ai\", \"data\": {\"content\": \"I'll look up order A1 first to confirm its details.\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 54, \"prompt_tokens\": 442, \"total_tokens\": 496, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.011158140921681601, \"cost_details\": {\"completion_cost_inr\": 0.0036628547706432004, \"prompt_cost_inr\": 0.007495286151038401}, \"is_byok\": false, \"latency_ms\": 747}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020928-cBfmqhCeTui0QXKBLzKp\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-1ef5-7189-8d3f-b113e67a224a-0\", \"tool_calls\": [{\"name\": \"lookup_order\", \"args\": {\"order_id\": \"A1\"}, \"id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 442, \"output_tokens\": 54, \"total_tokens\": 496, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}}, {\"type\": \"tool\", \"data\": {\"content\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"status\\\": \\\"pending\\\", \\\"customer_id\\\": \\\"C1\\\", \\\"price\\\": 300}\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"lookup_order\", \"id\": \"5ab5b8a0-4787-445d-856e-ca6eea6e55cf\", \"tool_call_id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"artifact\": null, \"status\": \"success\"}}, {\"type\": \"ai\", \"data\": {\"content\": \"Order A1 is found \u2014 it's still pending (price $300), so it can be cancelled. I'll go ahead and cancel it now.\\n\\n\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 142, \"prompt_tokens\": 534, \"total_tokens\": 676, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 53, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 384, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.012305835416483137, \"cost_details\": {\"completion_cost_inr\": 0.009631951433913601, \"prompt_cost_inr\": 0.002673883982569536}, \"is_byok\": false, \"latency_ms\": 1672}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020929-XfPWSllH9c116ruyEkqC\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-2490-7286-959c-3338fb0de901-0\", \"tool_calls\": [{\"name\": \"cancel_order\", \"args\": {\"order_id\": \"A1\", \"reason\": \"Customer ordered by mistake\"}, \"id\": \"chatcmpl-tool-b7d5684107664576\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 534, \"output_tokens\": 142, \"total_tokens\": 676, \"input_token_details\": {\"audio\": 0, \"cache_read\": 384, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 53}}}}, {\"type\": \"tool\", \"data\": {\"content\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"status\\\": \\\"cancelled\\\"}\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"cancel_order\", \"id\": \"115b83a2-fd75-4da4-b21c-8f077809f850\", \"tool_call_id\": \"chatcmpl-tool-b7d5684107664576\", \"artifact\": null, \"status\": \"success\"}}]}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"messages\": [{\"type\": \"ai\", \"data\": {\"content\": \"Done! Order A1 has been cancelled successfully.\\n\\nHere's a summary:\\n- **Order:** A1\\n- **Original status:** Pending\\n- **Price:** $300\\n- **New status:** Cancelled\\n- **Reason:** Customer ordered by mistake\\n\\nSince the order was still pending (not yet charged or shipped), there's nothing further needed on your end. You should receive a confirmation shortly. Is there anything else I can help you with?\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 95, \"prompt_tokens\": 651, \"total_tokens\": 746, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 512, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.008974672494514849, \"cost_details\": {\"completion_cost_inr\": 0.0064439111705760005, \"prompt_cost_inr\": 0.0025307613239388483}, \"is_byok\": false, \"latency_ms\": 867}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020931-jkdRQawrD9AcyraiYRD4\", \"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-2c3f-75ef-b11f-202bc5d845c2-0\", \"tool_calls\": [], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 651, \"output_tokens\": 95, \"total_tokens\": 746, \"input_token_details\": {\"audio\": 0, \"cache_read\": 512, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}}]}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "metadata",
+         "value": {
+          "stringValue": "{\"ls_integration\": \"langgraph\", \"langgraph_step\": 5, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:15709129-c181-a36f-e8b0-be3966b41982\"}"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "AGENT"
+         }
+        }
+       ],
+       "parentSpanId": "18ba58f8706b08dd"
+      },
+      {
+       "traceId": "55e6fa42a49190a0dd338b6319ee6147",
+       "spanId": "18ba58f8706b08dd",
+       "name": "LangGraph",
+       "startTimeUnixNano": "1793020927732230912",
+       "endTimeUnixNano": "1793020932301899008",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"messages\": [[\"system\", \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\"], [\"user\", \"Please cancel order A1, I ordered it by mistake.\"]]}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"messages\": [{\"type\": \"system\", \"data\": {\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"system\", \"name\": null, \"id\": \"02e4f0e6-41c4-486b-922c-7dc21594866a\"}}, {\"type\": \"human\", \"data\": {\"content\": \"Please cancel order A1, I ordered it by mistake.\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"c5537c53-2ae5-4c36-a7ce-4086ab15bd8e\"}}, {\"type\": \"ai\", \"data\": {\"content\": \"I'll look up order A1 first to confirm its details.\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 54, \"prompt_tokens\": 442, \"total_tokens\": 496, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 0, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.011158140921681601, \"cost_details\": {\"completion_cost_inr\": 0.0036628547706432004, \"prompt_cost_inr\": 0.007495286151038401}, \"is_byok\": false, \"latency_ms\": 747}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020928-cBfmqhCeTui0QXKBLzKp\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-1ef5-7189-8d3f-b113e67a224a-0\", \"tool_calls\": [{\"name\": \"lookup_order\", \"args\": {\"order_id\": \"A1\"}, \"id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 442, \"output_tokens\": 54, \"total_tokens\": 496, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}}, {\"type\": \"tool\", \"data\": {\"content\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"status\\\": \\\"pending\\\", \\\"customer_id\\\": \\\"C1\\\", \\\"price\\\": 300}\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"lookup_order\", \"id\": \"5ab5b8a0-4787-445d-856e-ca6eea6e55cf\", \"tool_call_id\": \"chatcmpl-tool-85b2ddd25dbcc287\", \"artifact\": null, \"status\": \"success\"}}, {\"type\": \"ai\", \"data\": {\"content\": \"Order A1 is found \u2014 it's still pending (price $300), so it can be cancelled. I'll go ahead and cancel it now.\\n\\n\\n\\n\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 142, \"prompt_tokens\": 534, \"total_tokens\": 676, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 53, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 384, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.012305835416483137, \"cost_details\": {\"completion_cost_inr\": 0.009631951433913601, \"prompt_cost_inr\": 0.002673883982569536}, \"is_byok\": false, \"latency_ms\": 1672}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020929-XfPWSllH9c116ruyEkqC\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-2490-7286-959c-3338fb0de901-0\", \"tool_calls\": [{\"name\": \"cancel_order\", \"args\": {\"order_id\": \"A1\", \"reason\": \"Customer ordered by mistake\"}, \"id\": \"chatcmpl-tool-b7d5684107664576\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 534, \"output_tokens\": 142, \"total_tokens\": 676, \"input_token_details\": {\"audio\": 0, \"cache_read\": 384, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 53}}}}, {\"type\": \"tool\", \"data\": {\"content\": \"{\\\"order_id\\\": \\\"A1\\\", \\\"status\\\": \\\"cancelled\\\"}\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"cancel_order\", \"id\": \"115b83a2-fd75-4da4-b21c-8f077809f850\", \"tool_call_id\": \"chatcmpl-tool-b7d5684107664576\", \"artifact\": null, \"status\": \"success\"}}, {\"type\": \"ai\", \"data\": {\"content\": \"Done! Order A1 has been cancelled successfully.\\n\\nHere's a summary:\\n- **Order:** A1\\n- **Original status:** Pending\\n- **Price:** $300\\n- **New status:** Cancelled\\n- **Reason:** Customer ordered by mistake\\n\\nSince the order was still pending (not yet charged or shipped), there's nothing further needed on your end. You should receive a confirmation shortly. Is there anything else I can help you with?\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 95, \"prompt_tokens\": 651, \"total_tokens\": 746, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": null, \"text_tokens\": null, \"image_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cache_write_tokens\": 0, \"cached_tokens\": 512, \"image_tokens\": null, \"text_tokens\": null, \"video_tokens\": 0}, \"cost\": 0.008974672494514849, \"cost_details\": {\"completion_cost_inr\": 0.0064439111705760005, \"prompt_cost_inr\": 0.0025307613239388483}, \"is_byok\": false, \"latency_ms\": 867}, \"model_provider\": \"openai\", \"model_name\": \"deepseek/deepseek-v4.1-flash-1017\", \"system_fingerprint\": \"vllm-0.31.1rc1.dev273+g2eb491e18-tp2-2fe22025\", \"id\": \"gen-1793020931-jkdRQawrD9AcyraiYRD4\", \"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--01a17860-2c3f-75ef-b11f-202bc5d845c2-0\", \"tool_calls\": [], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 651, \"output_tokens\": 95, \"total_tokens\": 746, \"input_token_details\": {\"audio\": 0, \"cache_read\": 512, \"cache_creation\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}}]}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "metadata",
+         "value": {
+          "stringValue": "{\"ls_integration\": \"langgraph\"}"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

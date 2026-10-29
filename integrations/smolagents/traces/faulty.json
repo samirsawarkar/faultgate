@@ -1,0 +1,597 @@
+{
+ "resourceSpans": [
+  {
+   "scopeSpans": [
+    {
+     "spans": [
+      {
+       "traceId": "c129f523ae018198ba2fe0c0c74d366b",
+       "spanId": "43343ba640cff7e4",
+       "name": "OpenAIModel.generate",
+       "startTimeUnixNano": "1792932692922136100",
+       "endTimeUnixNano": "1792932695352814900",
+       "attributes": [
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"messages\": [\"ChatMessage(role=<MessageRole.SYSTEM: 'system'>, content=[{'type': 'text', 'text': 'You are an expert assistant who can solve any task using tool calls. You will be given a task to solve as best you can.\\\\nTo do so, you have been given access to some tools.\\\\n\\\\nThe tool call you write is an action: after the tool is executed, you will get the result of the tool call as an \\\"observation\\\".\\\\nThis Action/Observation can repeat N times, you should take several steps when needed.\\\\n\\\\nYou can use the result of the previous action as input for the next action.\\\\nThe observation will always be a string: it can represent a file, like \\\"image_1.jpg\\\".\\\\nThen you can use it as input for the next action. You can do it for instance as follows:\\\\n\\\\nObservation: \\\"image_1.jpg\\\"\\\\n\\\\nAction:\\\\n{\\\\n  \\\"name\\\": \\\"image_transformer\\\",\\\\n  \\\"arguments\\\": {\\\"image\\\": \\\"image_1.jpg\\\"}\\\\n}\\\\n\\\\nTo provide the final answer to the task, use an action blob with \\\"name\\\": \\\"final_answer\\\" tool. It is the only way to complete the task, else you will be stuck on a loop. So your final output should look like this:\\\\nAction:\\\\n{\\\\n  \\\"name\\\": \\\"final_answer\\\",\\\\n  \\\"arguments\\\": {\\\"answer\\\": \\\"insert your final answer here\\\"}\\\\n}\\\\n\\\\n\\\\nHere are a few examples using notional tools:\\\\n---\\\\nTask: \\\"Generate an image of the oldest person in this document.\\\"\\\\n\\\\nAction:\\\\n{\\\\n  \\\"name\\\": \\\"document_qa\\\",\\\\n  \\\"arguments\\\": {\\\"document\\\": \\\"document.pdf\\\", \\\"question\\\": \\\"Who is the oldest person mentioned?\\\"}\\\\n}\\\\nObservation: \\\"The oldest person in the document is John Doe, a 55 year old lumberjack living in Newfoundland.\\\"\\\\n\\\\nAction:\\\\n{\\\\n  \\\"name\\\": \\\"image_generator\\\",\\\\n  \\\"arguments\\\": {\\\"prompt\\\": \\\"A portrait of John Doe, a 55-year-old man living in Canada.\\\"}\\\\n}\\\\nObservation: \\\"image.png\\\"\\\\n\\\\nAction:\\\\n{\\\\n  \\\"name\\\": \\\"final_answer\\\",\\\\n  \\\"arguments\\\": \\\"image.png\\\"\\\\n}\\\\n\\\\n---\\\\nTask: \\\"What is the result of the following operation: 5 + 3 + 1294.678?\\\"\\\\n\\\\nAction:\\\\n{\\\\n    \\\"name\\\": \\\"python_interpreter\\\",\\\\n    \\\"arguments\\\": {\\\"code\\\": \\\"5 + 3 + 1294.678\\\"}\\\\n}\\\\nObservation: 1302.678\\\\n\\\\nAction:\\\\n{\\\\n  \\\"name\\\": \\\"final_answer\\\",\\\\n  \\\"arguments\\\": \\\"1302.678\\\"\\\\n}\\\\n\\\\n---\\\\nTask: \\\"Which city has the highest population , Guangzhou or Shanghai?\\\"\\\\n\\\\nAction:\\\\n{\\\\n    \\\"name\\\": \\\"web_search\\\",\\\\n    \\\"arguments\\\": \\\"Population Guangzhou\\\"\\\\n}\\\\nObservation: [\\\\'Guangzhou has a population of 15 million inhabitants as of 2021.\\\\']\\\\n\\\\n\\\\nAction:\\\\n{\\\\n    \\\"name\\\": \\\"web_search\\\",\\\\n    \\\"arguments\\\": \\\"Population Shanghai\\\"\\\\n}\\\\nObservation: \\\\'26 million (2019)\\\\'\\\\n\\\\nAction:\\\\n{\\\\n  \\\"name\\\": \\\"final_answer\\\",\\\\n  \\\"arguments\\\": \\\"Shanghai\\\"\\\\n}\\\\n\\\\nAbove example were using notional tools that might not exist for you. You only have access to these tools:\\\\n- lookup_order: Look up an order.\\\\n    Takes inputs: {\\\\'order_id\\\\': {\\\\'type\\\\': \\\\'string\\\\', \\\\'description\\\\': \\\\'The id of the order.\\\\'}}\\\\n    Returns an output of type: string\\\\n- cancel_order: Cancel an order.\\\\n    Takes inputs: {\\\\'order_id\\\\': {\\\\'type\\\\': \\\\'string\\\\', \\\\'description\\\\': \\\\'The id of the order.\\\\'}, \\\\'reason\\\\': {\\\\'type\\\\': \\\\'string\\\\', \\\\'description\\\\': \\\\'Why the order is cancelled.\\\\'}}\\\\n    Returns an output of type: string\\\\n- issue_refund: Refund an order.\\\\n    Takes inputs: {\\\\'order_id\\\\': {\\\\'type\\\\': \\\\'string\\\\', \\\\'description\\\\': \\\\'The id of the order.\\\\'}, \\\\'amount\\\\': {\\\\'type\\\\': \\\\'number\\\\', \\\\'description\\\\': \\\\'The amount to refund.\\\\'}}\\\\n    Returns an output of type: string\\\\n- final_answer: Provides a final answer to the given problem.\\\\n    Takes inputs: {\\\\'answer\\\\': {\\\\'type\\\\': \\\\'any\\\\', \\\\'description\\\\': \\\\'The final answer to the problem\\\\'}}\\\\n    Returns an output of type: any\\\\nYou are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\\\\n\\\\nHere are the rules you should always follow to solve your task:\\\\n1. ALWAYS provide a tool call, else you will fail.\\\\n2. Always use the right arguments for the tools. Never use variable names as the action arguments, use the value instead.\\\\n3. Call a tool only when needed: do not call the search agent if you do not need information, try to solve the task yourself. If no tool call is needed, use final_answer tool to return your answer.\\\\n4. Never re-do a tool call that you previously did with the exact same parameters.\\\\n\\\\nNow Begin!'}], tool_calls=None, raw=None, token_usage=None)\", \"ChatMessage(role=<MessageRole.USER: 'user'>, content=[{'type': 'text', 'text': 'New task:\\\\nPlease cancel order A1, I ordered it by mistake.'}], tool_calls=None, raw=None, token_usage=None)\"], \"stop_sequences\": [\"Observation:\", \"Calling tools:\"], \"response_format\": null, \"tools_to_call_from\": [\"<smolagents.tools.tool.<locals>.SimpleTool object at 0x00000296865E4AD0>\", \"<smolagents.tools.tool.<locals>.SimpleTool object at 0x00000296872638C0>\", \"<smolagents.tools.tool.<locals>.SimpleTool object at 0x0000029687262270>\", \"<smolagents.default_tools.FinalAnswerTool object at 0x00000296871FF9D0>\"], \"kwargs\": {}}"
+         }
+        },
+        {
+         "key": "llm.invocation_parameters",
+         "value": {
+          "stringValue": "{}"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.contents.0.message_content.type",
+         "value": {
+          "stringValue": "text"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.contents.0.message_content.text",
+         "value": {
+          "stringValue": "You are an expert assistant who can solve any task using tool calls. You will be given a task to solve as best you can.\nTo do so, you have been given access to some tools.\n\nThe tool call you write is an action: after the tool is executed, you will get the result of the tool call as an \"observation\".\nThis Action/Observation can repeat N times, you should take several steps when needed.\n\nYou can use the result of the previous action as input for the next action.\nThe observation will always be a string: it can represent a file, like \"image_1.jpg\".\nThen you can use it as input for the next action. You can do it for instance as follows:\n\nObservation: \"image_1.jpg\"\n\nAction:\n{\n  \"name\": \"image_transformer\",\n  \"arguments\": {\"image\": \"image_1.jpg\"}\n}\n\nTo provide the final answer to the task, use an action blob with \"name\": \"final_answer\" tool. It is the only way to complete the task, else you will be stuck on a loop. So your final output should look like this:\nAction:\n{\n  \"name\": \"final_answer\",\n  \"arguments\": {\"answer\": \"insert your final answer here\"}\n}\n\n\nHere are a few examples using notional tools:\n---\nTask: \"Generate an image of the oldest person in this document.\"\n\nAction:\n{\n  \"name\": \"document_qa\",\n  \"arguments\": {\"document\": \"document.pdf\", \"question\": \"Who is the oldest person mentioned?\"}\n}\nObservation: \"The oldest person in the document is John Doe, a 55 year old lumberjack living in Newfoundland.\"\n\nAction:\n{\n  \"name\": \"image_generator\",\n  \"arguments\": {\"prompt\": \"A portrait of John Doe, a 55-year-old man living in Canada.\"}\n}\nObservation: \"image.png\"\n\nAction:\n{\n  \"name\": \"final_answer\",\n  \"arguments\": \"image.png\"\n}\n\n---\nTask: \"What is the result of the following operation: 5 + 3 + 1294.678?\"\n\nAction:\n{\n    \"name\": \"python_interpreter\",\n    \"arguments\": {\"code\": \"5 + 3 + 1294.678\"}\n}\nObservation: 1302.678\n\nAction:\n{\n  \"name\": \"final_answer\",\n  \"arguments\": \"1302.678\"\n}\n\n---\nTask: \"Which city has the highest population , Guangzhou or Shanghai?\"\n\nAction:\n{\n    \"name\": \"web_search\",\n    \"arguments\": \"Population Guangzhou\"\n}\nObservation: ['Guangzhou has a population of 15 million inhabitants as of 2021.']\n\n\nAction:\n{\n    \"name\": \"web_search\",\n    \"arguments\": \"Population Shanghai\"\n}\nObservation: '26 million (2019)'\n\nAction:\n{\n  \"name\": \"final_answer\",\n  \"arguments\": \"Shanghai\"\n}\n\nAbove example were using notional tools that might not exist for you. You only have access to these tools:\n- lookup_order: Look up an order.\n    Takes inputs: {'order_id': {'type': 'string', 'description': 'The id of the order.'}}\n    Returns an output of type: string\n- cancel_order: Cancel an order.\n    Takes inputs: {'order_id': {'type': 'string', 'description': 'The id of the order.'}, 'reason': {'type': 'string', 'description': 'Why the order is cancelled.'}}\n    Returns an output of type: string\n- issue_refund: Refund an order.\n    Takes inputs: {'order_id': {'type': 'string', 'description': 'The id of the order.'}, 'amount': {'type': 'number', 'description': 'The amount to refund.'}}\n    Returns an output of type: string\n- final_answer: Provides a final answer to the given problem.\n    Takes inputs: {'answer': {'type': 'any', 'description': 'The final answer to the problem'}}\n    Returns an output of type: any\nYou are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\n\nHere are the rules you should always follow to solve your task:\n1. ALWAYS provide a tool call, else you will fail.\n2. Always use the right arguments for the tools. Never use variable names as the action arguments, use the value instead.\n3. Call a tool only when needed: do not call the search agent if you do not need information, try to solve the task yourself. If no tool call is needed, use final_answer tool to return your answer.\n4. Never re-do a tool call that you previously did with the exact same parameters.\n\nNow Begin!"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.role",
+         "value": {
+          "stringValue": "user"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.contents.0.message_content.type",
+         "value": {
+          "stringValue": "text"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.contents.0.message_content.text",
+         "value": {
+          "stringValue": "New task:\nPlease cancel order A1, I ordered it by mistake."
+         }
+        },
+        {
+         "key": "llm.token_count.prompt",
+         "value": {
+          "intValue": "1142"
+         }
+        },
+        {
+         "key": "llm.token_count.completion",
+         "value": {
+          "intValue": "31"
+         }
+        },
+        {
+         "key": "llm.token_count.total",
+         "value": {
+          "intValue": "1173"
+         }
+        },
+        {
+         "key": "llm.model_name",
+         "value": {
+          "stringValue": "openai/gpt-6-luna"
+         }
+        },
+        {
+         "key": "llm.provider",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.system",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "call_24Vqp0fRnxJyVNDvW4066SeM"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\":\"A1\"}"
+         }
+        },
+        {
+         "key": "llm.tools.0.tool.json_schema",
+         "value": {
+          "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"lookup_order\", \"description\": \"Look up an order.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"order_id\": {\"type\": \"string\", \"description\": \"The id of the order.\"}}, \"required\": [\"order_id\"]}}}"
+         }
+        },
+        {
+         "key": "llm.tools.1.tool.json_schema",
+         "value": {
+          "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"cancel_order\", \"description\": \"Cancel an order.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"order_id\": {\"type\": \"string\", \"description\": \"The id of the order.\"}, \"reason\": {\"type\": \"string\", \"description\": \"Why the order is cancelled.\"}}, \"required\": [\"order_id\", \"reason\"]}}}"
+         }
+        },
+        {
+         "key": "llm.tools.2.tool.json_schema",
+         "value": {
+          "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"issue_refund\", \"description\": \"Refund an order.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"order_id\": {\"type\": \"string\", \"description\": \"The id of the order.\"}, \"amount\": {\"type\": \"number\", \"description\": \"The amount to refund.\"}}, \"required\": [\"order_id\", \"amount\"]}}}"
+         }
+        },
+        {
+         "key": "llm.tools.3.tool.json_schema",
+         "value": {
+          "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"final_answer\", \"description\": \"Provides a final answer to the given problem.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"answer\": {\"type\": \"string\", \"description\": \"The final answer to the problem\"}}, \"required\": [\"answer\"]}}}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"role\": \"assistant\", \"content\": null, \"tool_calls\": [{\"function\": {\"arguments\": \"{\\\"order_id\\\":\\\"A1\\\"}\", \"name\": \"lookup_order\", \"description\": null}, \"id\": \"call_24Vqp0fRnxJyVNDvW4066SeM\", \"type\": \"function\"}], \"raw\": \"ChatCompletion(id='resp_0cb6b381a44eb749016addfb54f3e087d2b9857d0b8f2e8e14', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_24Vqp0fRnxJyVNDvW4066SeM', function=Function(arguments='{\\\"order_id\\\":\\\"A1\\\"}', name='lookup_order'), type='function')]))], created=1792932692, model='gpt-6-luna', object='chat.completion', metadata=None, moderation=None, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=31, prompt_tokens=1142, total_tokens=1173, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=9, rejected_prediction_tokens=None, text_tokens=None), prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=0, cached_tokens=0, image_tokens=None, text_tokens=None), cost=0.014638168194724802, cost_details={'completion_cost_inr': 0.0017493570317520003, 'prompt_cost_inr': 0.012888811162972805}, latency_ms=1085))\", \"token_usage\": {\"input_tokens\": 1142, \"output_tokens\": 31, \"total_tokens\": 1173}}"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "LLM"
+         }
+        }
+       ],
+       "parentSpanId": "fe1d42bb77e7a090"
+      },
+      {
+       "traceId": "c129f523ae018198ba2fe0c0c74d366b",
+       "spanId": "9e7ae0a642e57391",
+       "name": "SimpleTool",
+       "startTimeUnixNano": "1792932695353386900",
+       "endTimeUnixNano": "1792932695353547800",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"args\": [], \"sanitize_inputs_outputs\": true, \"kwargs\": {\"order_id\": \"A1\"}}"
+         }
+        },
+        {
+         "key": "tool.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "tool.description",
+         "value": {
+          "stringValue": "Look up an order."
+         }
+        },
+        {
+         "key": "tool.parameters",
+         "value": {
+          "stringValue": "{\"order_id\": {\"type\": \"string\", \"description\": \"The id of the order.\"}}"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"error\": \"lookup service unavailable\"}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "text/plain"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "TOOL"
+         }
+        }
+       ],
+       "parentSpanId": "fe1d42bb77e7a090"
+      },
+      {
+       "traceId": "c129f523ae018198ba2fe0c0c74d366b",
+       "spanId": "fe1d42bb77e7a090",
+       "name": "Step 1",
+       "startTimeUnixNano": "1792932692921716200",
+       "endTimeUnixNano": "1792932695353629600",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"memory_step\": \"ActionStep(step_number=1, timing=Timing(start_time=1792932692.9214072, end_time=None, duration=None), model_input_messages=None, tool_calls=None, error=None, model_output_message=None, model_output=None, code_action=None, observations=None, observations_images=None, action_output=None, token_usage=None, is_final_answer=False)\"}"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"error\": \"lookup service unavailable\"}"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "69cd1f0611a0748c"
+      },
+      {
+       "traceId": "c129f523ae018198ba2fe0c0c74d366b",
+       "spanId": "1a940daea3f0d7da",
+       "name": "OpenAIModel.generate",
+       "startTimeUnixNano": "1792932695354498300",
+       "endTimeUnixNano": "1792932699651144700",
+       "attributes": [
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"messages\": [\"ChatMessage(role=<MessageRole.SYSTEM: 'system'>, content=[{'type': 'text', 'text': 'You are an expert assistant who can solve any task using tool calls. You will be given a task to solve as best you can.\\\\nTo do so, you have been given access to some tools.\\\\n\\\\nThe tool call you write is an action: after the tool is executed, you will get the result of the tool call as an \\\"observation\\\".\\\\nThis Action/Observation can repeat N times, you should take several steps when needed.\\\\n\\\\nYou can use the result of the previous action as input for the next action.\\\\nThe observation will always be a string: it can represent a file, like \\\"image_1.jpg\\\".\\\\nThen you can use it as input for the next action. You can do it for instance as follows:\\\\n\\\\nObservation: \\\"image_1.jpg\\\"\\\\n\\\\nAction:\\\\n{\\\\n  \\\"name\\\": \\\"image_transformer\\\",\\\\n  \\\"arguments\\\": {\\\"image\\\": \\\"image_1.jpg\\\"}\\\\n}\\\\n\\\\nTo provide the final answer to the task, use an action blob with \\\"name\\\": \\\"final_answer\\\" tool. It is the only way to complete the task, else you will be stuck on a loop. So your final output should look like this:\\\\nAction:\\\\n{\\\\n  \\\"name\\\": \\\"final_answer\\\",\\\\n  \\\"arguments\\\": {\\\"answer\\\": \\\"insert your final answer here\\\"}\\\\n}\\\\n\\\\n\\\\nHere are a few examples using notional tools:\\\\n---\\\\nTask: \\\"Generate an image of the oldest person in this document.\\\"\\\\n\\\\nAction:\\\\n{\\\\n  \\\"name\\\": \\\"document_qa\\\",\\\\n  \\\"arguments\\\": {\\\"document\\\": \\\"document.pdf\\\", \\\"question\\\": \\\"Who is the oldest person mentioned?\\\"}\\\\n}\\\\nObservation: \\\"The oldest person in the document is John Doe, a 55 year old lumberjack living in Newfoundland.\\\"\\\\n\\\\nAction:\\\\n{\\\\n  \\\"name\\\": \\\"image_generator\\\",\\\\n  \\\"arguments\\\": {\\\"prompt\\\": \\\"A portrait of John Doe, a 55-year-old man living in Canada.\\\"}\\\\n}\\\\nObservation: \\\"image.png\\\"\\\\n\\\\nAction:\\\\n{\\\\n  \\\"name\\\": \\\"final_answer\\\",\\\\n  \\\"arguments\\\": \\\"image.png\\\"\\\\n}\\\\n\\\\n---\\\\nTask: \\\"What is the result of the following operation: 5 + 3 + 1294.678?\\\"\\\\n\\\\nAction:\\\\n{\\\\n    \\\"name\\\": \\\"python_interpreter\\\",\\\\n    \\\"arguments\\\": {\\\"code\\\": \\\"5 + 3 + 1294.678\\\"}\\\\n}\\\\nObservation: 1302.678\\\\n\\\\nAction:\\\\n{\\\\n  \\\"name\\\": \\\"final_answer\\\",\\\\n  \\\"arguments\\\": \\\"1302.678\\\"\\\\n}\\\\n\\\\n---\\\\nTask: \\\"Which city has the highest population , Guangzhou or Shanghai?\\\"\\\\n\\\\nAction:\\\\n{\\\\n    \\\"name\\\": \\\"web_search\\\",\\\\n    \\\"arguments\\\": \\\"Population Guangzhou\\\"\\\\n}\\\\nObservation: [\\\\'Guangzhou has a population of 15 million inhabitants as of 2021.\\\\']\\\\n\\\\n\\\\nAction:\\\\n{\\\\n    \\\"name\\\": \\\"web_search\\\",\\\\n    \\\"arguments\\\": \\\"Population Shanghai\\\"\\\\n}\\\\nObservation: \\\\'26 million (2019)\\\\'\\\\n\\\\nAction:\\\\n{\\\\n  \\\"name\\\": \\\"final_answer\\\",\\\\n  \\\"arguments\\\": \\\"Shanghai\\\"\\\\n}\\\\n\\\\nAbove example were using notional tools that might not exist for you. You only have access to these tools:\\\\n- lookup_order: Look up an order.\\\\n    Takes inputs: {\\\\'order_id\\\\': {\\\\'type\\\\': \\\\'string\\\\', \\\\'description\\\\': \\\\'The id of the order.\\\\'}}\\\\n    Returns an output of type: string\\\\n- cancel_order: Cancel an order.\\\\n    Takes inputs: {\\\\'order_id\\\\': {\\\\'type\\\\': \\\\'string\\\\', \\\\'description\\\\': \\\\'The id of the order.\\\\'}, \\\\'reason\\\\': {\\\\'type\\\\': \\\\'string\\\\', \\\\'description\\\\': \\\\'Why the order is cancelled.\\\\'}}\\\\n    Returns an output of type: string\\\\n- issue_refund: Refund an order.\\\\n    Takes inputs: {\\\\'order_id\\\\': {\\\\'type\\\\': \\\\'string\\\\', \\\\'description\\\\': \\\\'The id of the order.\\\\'}, \\\\'amount\\\\': {\\\\'type\\\\': \\\\'number\\\\', \\\\'description\\\\': \\\\'The amount to refund.\\\\'}}\\\\n    Returns an output of type: string\\\\n- final_answer: Provides a final answer to the given problem.\\\\n    Takes inputs: {\\\\'answer\\\\': {\\\\'type\\\\': \\\\'any\\\\', \\\\'description\\\\': \\\\'The final answer to the problem\\\\'}}\\\\n    Returns an output of type: any\\\\nYou are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\\\\n\\\\nHere are the rules you should always follow to solve your task:\\\\n1. ALWAYS provide a tool call, else you will fail.\\\\n2. Always use the right arguments for the tools. Never use variable names as the action arguments, use the value instead.\\\\n3. Call a tool only when needed: do not call the search agent if you do not need information, try to solve the task yourself. If no tool call is needed, use final_answer tool to return your answer.\\\\n4. Never re-do a tool call that you previously did with the exact same parameters.\\\\n\\\\nNow Begin!'}], tool_calls=None, raw=None, token_usage=None)\", \"ChatMessage(role=<MessageRole.USER: 'user'>, content=[{'type': 'text', 'text': 'New task:\\\\nPlease cancel order A1, I ordered it by mistake.'}], tool_calls=None, raw=None, token_usage=None)\", \"ChatMessage(role=<MessageRole.TOOL_CALL: 'tool-call'>, content=[{'type': 'text', 'text': \\\"Calling tools:\\\\n[{'id': 'call_24Vqp0fRnxJyVNDvW4066SeM', 'type': 'function', 'function': {'name': 'lookup_order', 'arguments': {'order_id': 'A1'}}}]\\\"}], tool_calls=None, raw=None, token_usage=None)\", \"ChatMessage(role=<MessageRole.TOOL_RESPONSE: 'tool-response'>, content=[{'type': 'text', 'text': 'Observation:\\\\n{\\\"error\\\": \\\"lookup service unavailable\\\"}'}], tool_calls=None, raw=None, token_usage=None)\"], \"stop_sequences\": [\"Observation:\", \"Calling tools:\"], \"response_format\": null, \"tools_to_call_from\": [\"<smolagents.tools.tool.<locals>.SimpleTool object at 0x00000296865E4AD0>\", \"<smolagents.tools.tool.<locals>.SimpleTool object at 0x00000296872638C0>\", \"<smolagents.tools.tool.<locals>.SimpleTool object at 0x0000029687262270>\", \"<smolagents.default_tools.FinalAnswerTool object at 0x00000296871FF9D0>\"], \"kwargs\": {}}"
+         }
+        },
+        {
+         "key": "llm.invocation_parameters",
+         "value": {
+          "stringValue": "{}"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.contents.0.message_content.type",
+         "value": {
+          "stringValue": "text"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.contents.0.message_content.text",
+         "value": {
+          "stringValue": "You are an expert assistant who can solve any task using tool calls. You will be given a task to solve as best you can.\nTo do so, you have been given access to some tools.\n\nThe tool call you write is an action: after the tool is executed, you will get the result of the tool call as an \"observation\".\nThis Action/Observation can repeat N times, you should take several steps when needed.\n\nYou can use the result of the previous action as input for the next action.\nThe observation will always be a string: it can represent a file, like \"image_1.jpg\".\nThen you can use it as input for the next action. You can do it for instance as follows:\n\nObservation: \"image_1.jpg\"\n\nAction:\n{\n  \"name\": \"image_transformer\",\n  \"arguments\": {\"image\": \"image_1.jpg\"}\n}\n\nTo provide the final answer to the task, use an action blob with \"name\": \"final_answer\" tool. It is the only way to complete the task, else you will be stuck on a loop. So your final output should look like this:\nAction:\n{\n  \"name\": \"final_answer\",\n  \"arguments\": {\"answer\": \"insert your final answer here\"}\n}\n\n\nHere are a few examples using notional tools:\n---\nTask: \"Generate an image of the oldest person in this document.\"\n\nAction:\n{\n  \"name\": \"document_qa\",\n  \"arguments\": {\"document\": \"document.pdf\", \"question\": \"Who is the oldest person mentioned?\"}\n}\nObservation: \"The oldest person in the document is John Doe, a 55 year old lumberjack living in Newfoundland.\"\n\nAction:\n{\n  \"name\": \"image_generator\",\n  \"arguments\": {\"prompt\": \"A portrait of John Doe, a 55-year-old man living in Canada.\"}\n}\nObservation: \"image.png\"\n\nAction:\n{\n  \"name\": \"final_answer\",\n  \"arguments\": \"image.png\"\n}\n\n---\nTask: \"What is the result of the following operation: 5 + 3 + 1294.678?\"\n\nAction:\n{\n    \"name\": \"python_interpreter\",\n    \"arguments\": {\"code\": \"5 + 3 + 1294.678\"}\n}\nObservation: 1302.678\n\nAction:\n{\n  \"name\": \"final_answer\",\n  \"arguments\": \"1302.678\"\n}\n\n---\nTask: \"Which city has the highest population , Guangzhou or Shanghai?\"\n\nAction:\n{\n    \"name\": \"web_search\",\n    \"arguments\": \"Population Guangzhou\"\n}\nObservation: ['Guangzhou has a population of 15 million inhabitants as of 2021.']\n\n\nAction:\n{\n    \"name\": \"web_search\",\n    \"arguments\": \"Population Shanghai\"\n}\nObservation: '26 million (2019)'\n\nAction:\n{\n  \"name\": \"final_answer\",\n  \"arguments\": \"Shanghai\"\n}\n\nAbove example were using notional tools that might not exist for you. You only have access to these tools:\n- lookup_order: Look up an order.\n    Takes inputs: {'order_id': {'type': 'string', 'description': 'The id of the order.'}}\n    Returns an output of type: string\n- cancel_order: Cancel an order.\n    Takes inputs: {'order_id': {'type': 'string', 'description': 'The id of the order.'}, 'reason': {'type': 'string', 'description': 'Why the order is cancelled.'}}\n    Returns an output of type: string\n- issue_refund: Refund an order.\n    Takes inputs: {'order_id': {'type': 'string', 'description': 'The id of the order.'}, 'amount': {'type': 'number', 'description': 'The amount to refund.'}}\n    Returns an output of type: string\n- final_answer: Provides a final answer to the given problem.\n    Takes inputs: {'answer': {'type': 'any', 'description': 'The final answer to the problem'}}\n    Returns an output of type: any\nYou are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\n\nHere are the rules you should always follow to solve your task:\n1. ALWAYS provide a tool call, else you will fail.\n2. Always use the right arguments for the tools. Never use variable names as the action arguments, use the value instead.\n3. Call a tool only when needed: do not call the search agent if you do not need information, try to solve the task yourself. If no tool call is needed, use final_answer tool to return your answer.\n4. Never re-do a tool call that you previously did with the exact same parameters.\n\nNow Begin!"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.role",
+         "value": {
+          "stringValue": "user"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.contents.0.message_content.type",
+         "value": {
+          "stringValue": "text"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.contents.0.message_content.text",
+         "value": {
+          "stringValue": "New task:\nPlease cancel order A1, I ordered it by mistake."
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.role",
+         "value": {
+          "stringValue": "tool-call"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.contents.0.message_content.type",
+         "value": {
+          "stringValue": "text"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.contents.0.message_content.text",
+         "value": {
+          "stringValue": "Calling tools:\n[{'id': 'call_24Vqp0fRnxJyVNDvW4066SeM', 'type': 'function', 'function': {'name': 'lookup_order', 'arguments': {'order_id': 'A1'}}}]"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.role",
+         "value": {
+          "stringValue": "tool-response"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.contents.0.message_content.type",
+         "value": {
+          "stringValue": "text"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.contents.0.message_content.text",
+         "value": {
+          "stringValue": "Observation:\n{\"error\": \"lookup service unavailable\"}"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt",
+         "value": {
+          "intValue": "1217"
+         }
+        },
+        {
+         "key": "llm.token_count.completion",
+         "value": {
+          "intValue": "255"
+         }
+        },
+        {
+         "key": "llm.token_count.total",
+         "value": {
+          "intValue": "1472"
+         }
+        },
+        {
+         "key": "llm.model_name",
+         "value": {
+          "stringValue": "openai/gpt-6-luna"
+         }
+        },
+        {
+         "key": "llm.provider",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.system",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "call_a9zJd40yAGYVGJBou90FUKj1"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "final_answer"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"answer\":\"I couldn\u2019t cancel order A1 because the order lookup service is unavailable. Please try again later, or contact support to have the cancellation processed.\"}"
+         }
+        },
+        {
+         "key": "llm.tools.0.tool.json_schema",
+         "value": {
+          "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"lookup_order\", \"description\": \"Look up an order.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"order_id\": {\"type\": \"string\", \"description\": \"The id of the order.\"}}, \"required\": [\"order_id\"]}}}"
+         }
+        },
+        {
+         "key": "llm.tools.1.tool.json_schema",
+         "value": {
+          "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"cancel_order\", \"description\": \"Cancel an order.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"order_id\": {\"type\": \"string\", \"description\": \"The id of the order.\"}, \"reason\": {\"type\": \"string\", \"description\": \"Why the order is cancelled.\"}}, \"required\": [\"order_id\", \"reason\"]}}}"
+         }
+        },
+        {
+         "key": "llm.tools.2.tool.json_schema",
+         "value": {
+          "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"issue_refund\", \"description\": \"Refund an order.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"order_id\": {\"type\": \"string\", \"description\": \"The id of the order.\"}, \"amount\": {\"type\": \"number\", \"description\": \"The amount to refund.\"}}, \"required\": [\"order_id\", \"amount\"]}}}"
+         }
+        },
+        {
+         "key": "llm.tools.3.tool.json_schema",
+         "value": {
+          "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"final_answer\", \"description\": \"Provides a final answer to the given problem.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"answer\": {\"type\": \"string\", \"description\": \"The final answer to the problem\"}}, \"required\": [\"answer\"]}}}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"role\": \"assistant\", \"content\": null, \"tool_calls\": [{\"function\": {\"arguments\": \"{\\\"answer\\\":\\\"I couldn\u2019t cancel order A1 because the order lookup service is unavailable. Please try again later, or contact support to have the cancellation processed.\\\"}\", \"name\": \"final_answer\", \"description\": null}, \"id\": \"call_a9zJd40yAGYVGJBou90FUKj1\", \"type\": \"function\"}], \"raw\": \"ChatCompletion(id='resp_03dd8e08429577d0016addfb5698b887d288985c87a08865fa', choices=[Choice(finish_reason='tool_calls', index=0, logprobs=None, message=ChatCompletionMessage(content=None, refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=[ChatCompletionMessageFunctionToolCall(id='call_a9zJd40yAGYVGJBou90FUKj1', function=Function(arguments='{\\\"answer\\\":\\\"I couldn\u2019t cancel order A1 because the order lookup service is unavailable. Please try again later, or contact support to have the cancellation processed.\\\"}', name='final_answer'), type='function')]))], created=1792932694, model='gpt-6-luna', object='chat.completion', metadata=None, moderation=None, service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=255, prompt_tokens=1217, total_tokens=1472, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=207, rejected_prediction_tokens=None, text_tokens=None), prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=1091, cached_tokens=0, image_tokens=None, text_tokens=None), cost=0.028125146600812806, cost_details={'completion_cost_inr': 0.01438987235796, 'prompt_cost_inr': 0.013735274242852804}, latency_ms=3736))\", \"token_usage\": {\"input_tokens\": 1217, \"output_tokens\": 255, \"total_tokens\": 1472}}"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "LLM"
+         }
+        }
+       ],
+       "parentSpanId": "acfd5c414b67b2ea"
+      },
+      {
+       "traceId": "c129f523ae018198ba2fe0c0c74d366b",
+       "spanId": "8639c3876bdb21ab",
+       "name": "FinalAnswerTool",
+       "startTimeUnixNano": "1792932699651711900",
+       "endTimeUnixNano": "1792932699651812000",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"args\": [], \"sanitize_inputs_outputs\": true, \"kwargs\": {\"answer\": \"I couldn\u2019t cancel order A1 because the order lookup service is unavailable. Please try again later, or contact support to have the cancellation processed.\"}}"
+         }
+        },
+        {
+         "key": "tool.name",
+         "value": {
+          "stringValue": "final_answer"
+         }
+        },
+        {
+         "key": "tool.description",
+         "value": {
+          "stringValue": "Provides a final answer to the given problem."
+         }
+        },
+        {
+         "key": "tool.parameters",
+         "value": {
+          "stringValue": "{\"answer\": {\"type\": \"any\", \"description\": \"The final answer to the problem\"}}"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "I couldn\u2019t cancel order A1 because the order lookup service is unavailable. Please try again later, or contact support to have the cancellation processed."
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "text/plain"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "TOOL"
+         }
+        }
+       ],
+       "parentSpanId": "acfd5c414b67b2ea"
+      },
+      {
+       "traceId": "c129f523ae018198ba2fe0c0c74d366b",
+       "spanId": "acfd5c414b67b2ea",
+       "name": "Step 2",
+       "startTimeUnixNano": "1792932695353960700",
+       "endTimeUnixNano": "1792932699651940500",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"memory_step\": \"ActionStep(step_number=2, timing=Timing(start_time=1792932695.3537347, end_time=None, duration=None), model_input_messages=None, tool_calls=None, error=None, model_output_message=None, model_output=None, code_action=None, observations=None, observations_images=None, action_output=None, token_usage=None, is_final_answer=False)\"}"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "I couldn\u2019t cancel order A1 because the order lookup service is unavailable. Please try again later, or contact support to have the cancellation processed."
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "69cd1f0611a0748c"
+      },
+      {
+       "traceId": "c129f523ae018198ba2fe0c0c74d366b",
+       "spanId": "69cd1f0611a0748c",
+       "name": "ToolCallingAgent.run",
+       "startTimeUnixNano": "1792932692915441000",
+       "endTimeUnixNano": "1792932699652086000",
+       "attributes": [
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"task\": \"Please cancel order A1, I ordered it by mistake.\", \"stream\": false, \"reset\": true, \"images\": null, \"additional_args\": null, \"max_steps\": null, \"return_full_result\": null}"
+         }
+        },
+        {
+         "key": "smolagents.max_steps",
+         "value": {
+          "intValue": "8"
+         }
+        },
+        {
+         "key": "smolagents.tools_names",
+         "value": {
+          "stringValue": "('lookup_order', 'cancel_order', 'issue_refund', 'final_answer')"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "I couldn\u2019t cancel order A1 because the order lookup service is unavailable. Please try again later, or contact support to have the cancellation processed."
+         }
+        },
+        {
+         "key": "llm.token_count.prompt",
+         "value": {
+          "intValue": "2359"
+         }
+        },
+        {
+         "key": "llm.token_count.completion",
+         "value": {
+          "intValue": "286"
+         }
+        },
+        {
+         "key": "llm.token_count.total",
+         "value": {
+          "intValue": "2645"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "AGENT"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

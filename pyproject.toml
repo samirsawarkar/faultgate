@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "faultgate"
-version = "0.4.0"
-description = "Local-first release gate for AI agents: check recorded traces for known failure modes through a pluggable judge."
+version = "0.4.1"
+description = "FAULTLINE faultgate: open-source release gate for AI agents, trace checks, and regression decisions."
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
@@ -33,7 +33,9 @@ demo = ["pyarrow", "huggingface_hub"]
 faultgate = "faultgate.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/Faultline-lab/faultgate"
+Homepage = "https://www.faultline-labs.com/products/faultgate/"
+Repository = "https://github.com/Faultline-lab/faultgate"
+Issues = "https://github.com/Faultline-lab/faultgate/issues"
 Evidence = "https://github.com/samirsawarkar/faultline-ai-reliability"
 
 [tool.setuptools.packages.find]

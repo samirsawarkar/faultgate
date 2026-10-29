@@ -1,0 +1,35 @@
+{
+ "judge": "none",
+ "checks": [
+  "search_loop",
+  "abstention",
+  "policy",
+  "repeated_call",
+  "unrecovered_tool_error",
+  "context_overflow"
+ ],
+ "runs": 3,
+ "n": 1,
+ "scenarios": [
+  "p-8291a0662c39"
+ ],
+ "clean_rate": {
+  "min": 1.0,
+  "max": 1.0,
+  "mean": 1.0,
+  "per_run": [
+   1.0,
+   1.0,
+   1.0
+  ]
+ },
+ "clean_in_all_runs": [
+  "p-8291a0662c39"
+ ],
+ "usage": {
+  "tokens": 618.3333333333334,
+  "latency_ms": 6108.549600000001,
+  "cost_usd": null
+ },
+ "rule": "PASS if clean_rate >= min - 1/n; FAIL if clean_rate < min - 3/n or the drop from the baseline mean is significant (one-sided, alpha 0.05); else INCONCLUSIVE with the n needed for power 0.8"
+}

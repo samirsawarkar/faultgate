@@ -1,0 +1,6 @@
+langgraph==1.2.17
+langchain-core==1.7.0
+langchain-openai==1.7.2
+openinference-instrumentation-langchain==0.1.80
+opentelemetry-sdk==1.45.1
+faultgate==0.4.0

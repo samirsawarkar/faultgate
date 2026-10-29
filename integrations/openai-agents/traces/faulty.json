@@ -1,0 +1,421 @@
+{
+ "resourceSpans": [
+  {
+   "scopeSpans": [
+    {
+     "spans": [
+      {
+       "traceId": "26d61e43cddd593984fc82f43146fcb8",
+       "spanId": "b9b3046ce5d01d8b",
+       "name": "generation",
+       "startTimeUnixNano": "1792931927241925120",
+       "endTimeUnixNano": "1792931929586641920",
+       "attributes": [
+        {
+         "key": "llm.system",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.model_name",
+         "value": {
+          "stringValue": "openai/gpt-6-luna"
+         }
+        },
+        {
+         "key": "llm.invocation_parameters",
+         "value": {
+          "stringValue": "{\"base_url\": \"https://aicredits.in/v1/\"}"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "[{\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"role\": \"system\"}, {\"role\": \"user\", \"content\": \"Please cancel order A1, I ordered it by mistake.\"}]"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.role",
+         "value": {
+          "stringValue": "user"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.content",
+         "value": {
+          "stringValue": "Please cancel order A1, I ordered it by mistake."
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "[{\"content\": null, \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": [{\"id\": \"call_fPMlXVSUHkfIbodKvHZ1Q6rU\", \"function\": {\"arguments\": \"{\\\"order_id\\\":\\\"A1\\\"}\", \"name\": \"lookup_order\"}, \"type\": \"function\"}]}]"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "call_fPMlXVSUHkfIbodKvHZ1Q6rU"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\":\"A1\"}"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt",
+         "value": {
+          "intValue": "160"
+         }
+        },
+        {
+         "key": "llm.token_count.completion",
+         "value": {
+          "intValue": "20"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "LLM"
+         }
+        }
+       ],
+       "parentSpanId": "2eff76424cf8a692"
+      },
+      {
+       "traceId": "26d61e43cddd593984fc82f43146fcb8",
+       "spanId": "f1a3eeade4c9398d",
+       "name": "lookup_order",
+       "startTimeUnixNano": "1792931929588311808",
+       "endTimeUnixNano": "1792931929589918976",
+       "attributes": [
+        {
+         "key": "tool.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"order_id\":\"A1\"}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"error\": \"lookup service unavailable\"}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "tool.description",
+         "value": {
+          "stringValue": "Look up an order."
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "TOOL"
+         }
+        }
+       ],
+       "parentSpanId": "2eff76424cf8a692"
+      },
+      {
+       "traceId": "26d61e43cddd593984fc82f43146fcb8",
+       "spanId": "2eff76424cf8a692",
+       "name": "turn",
+       "startTimeUnixNano": "1792931927241097984",
+       "endTimeUnixNano": "1792931929590370816",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "2e575d8917ea538b"
+      },
+      {
+       "traceId": "26d61e43cddd593984fc82f43146fcb8",
+       "spanId": "72736425d4ff5551",
+       "name": "generation",
+       "startTimeUnixNano": "1792931929591616000",
+       "endTimeUnixNano": "1792931931731141120",
+       "attributes": [
+        {
+         "key": "llm.system",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.model_name",
+         "value": {
+          "stringValue": "openai/gpt-6-luna"
+         }
+        },
+        {
+         "key": "llm.invocation_parameters",
+         "value": {
+          "stringValue": "{\"base_url\": \"https://aicredits.in/v1/\"}"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "[{\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"role\": \"system\"}, {\"role\": \"user\", \"content\": \"Please cancel order A1, I ordered it by mistake.\"}, {\"role\": \"assistant\", \"content\": null, \"tool_calls\": [{\"id\": \"call_fPMlXVSUHkfIbodKvHZ1Q6rU\", \"type\": \"function\", \"function\": {\"name\": \"lookup_order\", \"arguments\": \"{\\\"order_id\\\":\\\"A1\\\"}\"}}]}, {\"role\": \"tool\", \"tool_call_id\": \"call_fPMlXVSUHkfIbodKvHZ1Q6rU\", \"content\": \"{\\\"error\\\": \\\"lookup service unavailable\\\"}\"}]"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.role",
+         "value": {
+          "stringValue": "user"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.content",
+         "value": {
+          "stringValue": "Please cancel order A1, I ordered it by mistake."
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "call_fPMlXVSUHkfIbodKvHZ1Q6rU"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\":\"A1\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.role",
+         "value": {
+          "stringValue": "tool"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.content",
+         "value": {
+          "stringValue": "{\"error\": \"lookup service unavailable\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.tool_call_id",
+         "value": {
+          "stringValue": "call_fPMlXVSUHkfIbodKvHZ1Q6rU"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "[{\"content\": \"I\u2019m sorry, but I couldn\u2019t access the order details because the lookup service is unavailable, so I wasn\u2019t able to cancel order A1. Please try again shortly.\", \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": null}]"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.content",
+         "value": {
+          "stringValue": "I\u2019m sorry, but I couldn\u2019t access the order details because the lookup service is unavailable, so I wasn\u2019t able to cancel order A1. Please try again shortly."
+         }
+        },
+        {
+         "key": "llm.token_count.prompt",
+         "value": {
+          "intValue": "199"
+         }
+        },
+        {
+         "key": "llm.token_count.completion",
+         "value": {
+          "intValue": "64"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "LLM"
+         }
+        }
+       ],
+       "parentSpanId": "f6118617ca97d434"
+      },
+      {
+       "traceId": "26d61e43cddd593984fc82f43146fcb8",
+       "spanId": "f6118617ca97d434",
+       "name": "turn",
+       "startTimeUnixNano": "1792931929590617856",
+       "endTimeUnixNano": "1792931931732572928",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "2e575d8917ea538b"
+      },
+      {
+       "traceId": "26d61e43cddd593984fc82f43146fcb8",
+       "spanId": "2e575d8917ea538b",
+       "name": "support_agent",
+       "startTimeUnixNano": "1792931927240901888",
+       "endTimeUnixNano": "1792931931733010944",
+       "attributes": [
+        {
+         "key": "graph.node.id",
+         "value": {
+          "stringValue": "support_agent"
+         }
+        },
+        {
+         "key": "agent.name",
+         "value": {
+          "stringValue": "support_agent"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "AGENT"
+         }
+        }
+       ],
+       "parentSpanId": "e7eca583431cf055"
+      },
+      {
+       "traceId": "26d61e43cddd593984fc82f43146fcb8",
+       "spanId": "e7eca583431cf055",
+       "name": "Agent workflow",
+       "startTimeUnixNano": "1792931927240363008",
+       "endTimeUnixNano": "1792931931733128192",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "d3baee234b1e5d85"
+      },
+      {
+       "traceId": "26d61e43cddd593984fc82f43146fcb8",
+       "spanId": "d3baee234b1e5d85",
+       "name": "Agent workflow",
+       "startTimeUnixNano": "1792931927240212100",
+       "endTimeUnixNano": "1792931931733196900",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "AGENT"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

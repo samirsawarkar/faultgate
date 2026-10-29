@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.1 — 2026-10-26
+
+- Update package metadata and bundled README with the FAULTLINE product page and current source repository. Runtime behavior is unchanged.
+
 ## 0.4.0 — 2026-10-14
 
 Closes the six policy gaps an outside client found in 0.3.1 (17 retail probes: 6 caught, 6 missed) and adds an outcome input.

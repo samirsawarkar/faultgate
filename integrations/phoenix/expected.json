@@ -1,0 +1,5 @@
+{
+  "clean.json": {"exit_code": 0, "fired": []},
+  "faulty.json": {"exit_code": 1, "fired": ["abstention", "unrecovered_tool_error"]},
+  "violation.json": {"exit_code": 1, "fired": ["policy"]}
+}

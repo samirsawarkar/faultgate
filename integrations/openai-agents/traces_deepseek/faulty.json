@@ -1,0 +1,709 @@
+{
+ "resourceSpans": [
+  {
+   "scopeSpans": [
+    {
+     "spans": [
+      {
+       "traceId": "b122c57c90d221ed5b7ce8eb8180404e",
+       "spanId": "ad47e0d7746f8b07",
+       "name": "generation",
+       "startTimeUnixNano": "1793020957263838976",
+       "endTimeUnixNano": "1793020958410358016",
+       "attributes": [
+        {
+         "key": "llm.system",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.model_name",
+         "value": {
+          "stringValue": "deepseek/deepseek-v4.1-flash-1017"
+         }
+        },
+        {
+         "key": "llm.invocation_parameters",
+         "value": {
+          "stringValue": "{\"base_url\": \"https://aicredits.in/v1/\"}"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "[{\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"role\": \"system\"}, {\"role\": \"user\", \"content\": \"Please cancel order A1, I ordered it by mistake.\"}]"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.role",
+         "value": {
+          "stringValue": "user"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.content",
+         "value": {
+          "stringValue": "Please cancel order A1, I ordered it by mistake."
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "[{\"content\": \"I'll look up order A1 first to confirm the details.\\n\\n\", \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": [{\"id\": \"chatcmpl-tool-be2a037965e92459\", \"function\": {\"arguments\": \"{\\\"order_id\\\": \\\"A1\\\"}\", \"name\": \"lookup_order\"}, \"type\": \"function\", \"index\": 0}], \"reasoning\": null}]"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.content",
+         "value": {
+          "stringValue": "I'll look up order A1 first to confirm the details.\n\n"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "chatcmpl-tool-be2a037965e92459"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\"}"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt",
+         "value": {
+          "intValue": "531"
+         }
+        },
+        {
+         "key": "llm.token_count.completion",
+         "value": {
+          "intValue": "54"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "LLM"
+         }
+        }
+       ],
+       "parentSpanId": "d7ca24d814b19cdd"
+      },
+      {
+       "traceId": "b122c57c90d221ed5b7ce8eb8180404e",
+       "spanId": "d4f25c6dade1d227",
+       "name": "lookup_order",
+       "startTimeUnixNano": "1793020958411078912",
+       "endTimeUnixNano": "1793020958411943936",
+       "attributes": [
+        {
+         "key": "tool.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\"}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"error\": \"lookup service unavailable\"}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "tool.description",
+         "value": {
+          "stringValue": "Look up an order."
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "TOOL"
+         }
+        }
+       ],
+       "parentSpanId": "d7ca24d814b19cdd"
+      },
+      {
+       "traceId": "b122c57c90d221ed5b7ce8eb8180404e",
+       "spanId": "d7ca24d814b19cdd",
+       "name": "turn",
+       "startTimeUnixNano": "1793020957263428096",
+       "endTimeUnixNano": "1793020958412261120",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "2d884077ed8ec88c"
+      },
+      {
+       "traceId": "b122c57c90d221ed5b7ce8eb8180404e",
+       "spanId": "0ae4aa79d314896a",
+       "name": "generation",
+       "startTimeUnixNano": "1793020958412920064",
+       "endTimeUnixNano": "1793020959727341056",
+       "attributes": [
+        {
+         "key": "llm.system",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.model_name",
+         "value": {
+          "stringValue": "deepseek/deepseek-v4.1-flash-1017"
+         }
+        },
+        {
+         "key": "llm.invocation_parameters",
+         "value": {
+          "stringValue": "{\"base_url\": \"https://aicredits.in/v1/\"}"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "[{\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"role\": \"system\"}, {\"role\": \"user\", \"content\": \"Please cancel order A1, I ordered it by mistake.\"}, {\"role\": \"assistant\", \"content\": \"I'll look up order A1 first to confirm the details.\\n\\n\", \"tool_calls\": [{\"id\": \"chatcmpl-tool-be2a037965e92459\", \"type\": \"function\", \"function\": {\"name\": \"lookup_order\", \"arguments\": \"{\\\"order_id\\\": \\\"A1\\\"}\"}}]}, {\"role\": \"tool\", \"tool_call_id\": \"chatcmpl-tool-be2a037965e92459\", \"content\": \"{\\\"error\\\": \\\"lookup service unavailable\\\"}\"}]"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.role",
+         "value": {
+          "stringValue": "user"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.content",
+         "value": {
+          "stringValue": "Please cancel order A1, I ordered it by mistake."
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.content",
+         "value": {
+          "stringValue": "I'll look up order A1 first to confirm the details.\n\n"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "chatcmpl-tool-be2a037965e92459"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.role",
+         "value": {
+          "stringValue": "tool"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.content",
+         "value": {
+          "stringValue": "{\"error\": \"lookup service unavailable\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.tool_call_id",
+         "value": {
+          "stringValue": "chatcmpl-tool-be2a037965e92459"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "[{\"content\": null, \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": [{\"id\": \"chatcmpl-tool-9b4d4761da0b7b2c\", \"function\": {\"arguments\": \"{\\\"order_id\\\": \\\"A1\\\"}\", \"name\": \"lookup_order\"}, \"type\": \"function\", \"index\": 0}], \"reasoning\": \"The lookup failed. I shouldn't cancel without looking it up. Per the instructions, always look up an order before canceling or refunding. The lookup service is unavailable, so I should not cancel and should tell the user.\\n\\nLet me retry once maybe? It says service unavailable. I could retry. Let's retry once to be diligent.\", \"reasoning_details\": [{\"format\": \"unknown\", \"index\": 0, \"text\": \"The lookup failed. I shouldn't cancel without looking it up. Per the instructions, always look up an order before canceling or refunding. The lookup service is unavailable, so I should not cancel and should tell the user.\\n\\nLet me retry once maybe? It says service unavailable. I could retry. Let's retry once to be diligent.\", \"type\": \"reasoning.text\"}]}]"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "chatcmpl-tool-9b4d4761da0b7b2c"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\"}"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt",
+         "value": {
+          "intValue": "605"
+         }
+        },
+        {
+         "key": "llm.token_count.completion",
+         "value": {
+          "intValue": "114"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "LLM"
+         }
+        }
+       ],
+       "parentSpanId": "b0cd9e38f706ae26"
+      },
+      {
+       "traceId": "b122c57c90d221ed5b7ce8eb8180404e",
+       "spanId": "32d5cc33f700fb12",
+       "name": "lookup_order",
+       "startTimeUnixNano": "1793020959728989952",
+       "endTimeUnixNano": "1793020959730353152",
+       "attributes": [
+        {
+         "key": "tool.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\"}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"error\": \"lookup service unavailable\"}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "tool.description",
+         "value": {
+          "stringValue": "Look up an order."
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "TOOL"
+         }
+        }
+       ],
+       "parentSpanId": "b0cd9e38f706ae26"
+      },
+      {
+       "traceId": "b122c57c90d221ed5b7ce8eb8180404e",
+       "spanId": "b0cd9e38f706ae26",
+       "name": "turn",
+       "startTimeUnixNano": "1793020958412390912",
+       "endTimeUnixNano": "1793020959730868992",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "2d884077ed8ec88c"
+      },
+      {
+       "traceId": "b122c57c90d221ed5b7ce8eb8180404e",
+       "spanId": "c4627621293c2fe8",
+       "name": "generation",
+       "startTimeUnixNano": "1793020959731700992",
+       "endTimeUnixNano": "1793020963347872000",
+       "attributes": [
+        {
+         "key": "llm.system",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.model_name",
+         "value": {
+          "stringValue": "deepseek/deepseek-v4.1-flash-1017"
+         }
+        },
+        {
+         "key": "llm.invocation_parameters",
+         "value": {
+          "stringValue": "{\"base_url\": \"https://aicredits.in/v1/\"}"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "[{\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"role\": \"system\"}, {\"role\": \"user\", \"content\": \"Please cancel order A1, I ordered it by mistake.\"}, {\"role\": \"assistant\", \"content\": \"I'll look up order A1 first to confirm the details.\\n\\n\", \"tool_calls\": [{\"id\": \"chatcmpl-tool-be2a037965e92459\", \"type\": \"function\", \"function\": {\"name\": \"lookup_order\", \"arguments\": \"{\\\"order_id\\\": \\\"A1\\\"}\"}}]}, {\"role\": \"tool\", \"tool_call_id\": \"chatcmpl-tool-be2a037965e92459\", \"content\": \"{\\\"error\\\": \\\"lookup service unavailable\\\"}\"}, {\"role\": \"assistant\", \"content\": null, \"tool_calls\": [{\"id\": \"chatcmpl-tool-9b4d4761da0b7b2c\", \"type\": \"function\", \"function\": {\"name\": \"lookup_order\", \"arguments\": \"{\\\"order_id\\\": \\\"A1\\\"}\"}}], \"reasoning\": \"The lookup failed. I shouldn't cancel without looking it up. Per the instructions, always look up an order before canceling or refunding. The lookup service is unavailable, so I should not cancel and should tell the user.\\n\\nLet me retry once maybe? It says service unavailable. I could retry. Let's retry once to be diligent.\"}, {\"role\": \"tool\", \"tool_call_id\": \"chatcmpl-tool-9b4d4761da0b7b2c\", \"content\": \"{\\\"error\\\": \\\"lookup service unavailable\\\"}\"}]"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.role",
+         "value": {
+          "stringValue": "user"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.content",
+         "value": {
+          "stringValue": "Please cancel order A1, I ordered it by mistake."
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.content",
+         "value": {
+          "stringValue": "I'll look up order A1 first to confirm the details.\n\n"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "chatcmpl-tool-be2a037965e92459"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.role",
+         "value": {
+          "stringValue": "tool"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.content",
+         "value": {
+          "stringValue": "{\"error\": \"lookup service unavailable\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.tool_call_id",
+         "value": {
+          "stringValue": "chatcmpl-tool-be2a037965e92459"
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.tool_calls.1.tool_call.id",
+         "value": {
+          "stringValue": "chatcmpl-tool-9b4d4761da0b7b2c"
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.tool_calls.1.tool_call.function.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.tool_calls.1.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"A1\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.5.message.role",
+         "value": {
+          "stringValue": "tool"
+         }
+        },
+        {
+         "key": "llm.input_messages.5.message.content",
+         "value": {
+          "stringValue": "{\"error\": \"lookup service unavailable\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.5.message.tool_call_id",
+         "value": {
+          "stringValue": "chatcmpl-tool-9b4d4761da0b7b2c"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "[{\"content\": \"I wasn't able to cancel order A1, because the order lookup service is currently unavailable \u2014 I tried twice and got an error both times.\\n\\nI don't cancel orders without first verifying them, since a cancellation can't be undone and I need to confirm the order ID and its status before proceeding. This is especially important here to make sure I'm not cancelling the wrong order.\\n\\nA couple of options:\\n- I can try again in a few minutes if you'd like \u2014 just say the word.\\n- If you can share the email address or order details (item, approximate order date, total), that may help me confirm things once the system is back up.\\n\\nSorry for the inconvenience. I'll hold off on any changes to A1 until I can verify it.\", \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": null, \"reasoning\": \"Still unavailable. I should not cancel \u2014 I can't verify the order. Tell user.\", \"reasoning_details\": [{\"format\": \"unknown\", \"index\": 0, \"text\": \"Still unavailable. I should not cancel \u2014 I can't verify the order. Tell user.\", \"type\": \"reasoning.text\"}]}]"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.content",
+         "value": {
+          "stringValue": "I wasn't able to cancel order A1, because the order lookup service is currently unavailable \u2014 I tried twice and got an error both times.\n\nI don't cancel orders without first verifying them, since a cancellation can't be undone and I need to confirm the order ID and its status before proceeding. This is especially important here to make sure I'm not cancelling the wrong order.\n\nA couple of options:\n- I can try again in a few minutes if you'd like \u2014 just say the word.\n- If you can share the email address or order details (item, approximate order date, total), that may help me confirm things once the system is back up.\n\nSorry for the inconvenience. I'll hold off on any changes to A1 until I can verify it."
+         }
+        },
+        {
+         "key": "llm.token_count.prompt",
+         "value": {
+          "intValue": "739"
+         }
+        },
+        {
+         "key": "llm.token_count.completion",
+         "value": {
+          "intValue": "175"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "LLM"
+         }
+        }
+       ],
+       "parentSpanId": "aea1b83971d41daa"
+      },
+      {
+       "traceId": "b122c57c90d221ed5b7ce8eb8180404e",
+       "spanId": "aea1b83971d41daa",
+       "name": "turn",
+       "startTimeUnixNano": "1793020959731020800",
+       "endTimeUnixNano": "1793020963348734976",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "2d884077ed8ec88c"
+      },
+      {
+       "traceId": "b122c57c90d221ed5b7ce8eb8180404e",
+       "spanId": "2d884077ed8ec88c",
+       "name": "support_agent",
+       "startTimeUnixNano": "1793020957263339008",
+       "endTimeUnixNano": "1793020963348951040",
+       "attributes": [
+        {
+         "key": "graph.node.id",
+         "value": {
+          "stringValue": "support_agent"
+         }
+        },
+        {
+         "key": "agent.name",
+         "value": {
+          "stringValue": "support_agent"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "AGENT"
+         }
+        }
+       ],
+       "parentSpanId": "f7bb1b594884bcad"
+      },
+      {
+       "traceId": "b122c57c90d221ed5b7ce8eb8180404e",
+       "spanId": "f7bb1b594884bcad",
+       "name": "Agent workflow",
+       "startTimeUnixNano": "1793020957263080960",
+       "endTimeUnixNano": "1793020963349012992",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "2533e3647ff67bb3"
+      },
+      {
+       "traceId": "b122c57c90d221ed5b7ce8eb8180404e",
+       "spanId": "2533e3647ff67bb3",
+       "name": "Agent workflow",
+       "startTimeUnixNano": "1793020957263012900",
+       "endTimeUnixNano": "1793020963349054900",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "AGENT"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

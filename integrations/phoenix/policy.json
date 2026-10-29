@@ -1,0 +1,11 @@
+{
+  "allow": ["lookup_order", "cancel_order", "issue_refund"],
+  "max_calls": 10,
+  "limits": [
+    {"tool": "issue_refund", "arg": "amount", "min": 0, "max": 500}
+  ],
+  "requires": [
+    {"tool": "cancel_order", "after": "lookup_order", "same_arg": "order_id", "success": true},
+    {"tool": "issue_refund", "after": "lookup_order", "same_arg": "order_id", "success": true}
+  ]
+}

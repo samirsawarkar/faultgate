@@ -1,0 +1,10 @@
+arize-phoenix==20.26.0
+arize-phoenix-client==3.5.0
+arize-phoenix-evals==3.9.4
+arize-phoenix-otel==0.17.2
+openinference-instrumentation-openai==0.1.66
+openai==3.37.0
+opentelemetry-exporter-otlp==1.45.1
+opentelemetry-exporter-otlp-proto-http==1.45.1
+opentelemetry-sdk==1.45.1
+faultgate==0.4.0

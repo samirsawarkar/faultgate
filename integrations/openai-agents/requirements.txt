@@ -1,0 +1,5 @@
+openai-agents==0.24.0
+openai==3.37.0
+openinference-instrumentation-openai-agents==2.6.0
+opentelemetry-sdk==1.45.1
+faultgate==0.4.0

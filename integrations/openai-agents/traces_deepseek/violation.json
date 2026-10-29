@@ -1,0 +1,721 @@
+{
+ "resourceSpans": [
+  {
+   "scopeSpans": [
+    {
+     "spans": [
+      {
+       "traceId": "71a3fa1866515c2aac3f947f41fe1aed",
+       "spanId": "2db8956ca4068f9d",
+       "name": "generation",
+       "startTimeUnixNano": "1793020963354604032",
+       "endTimeUnixNano": "1793020965349062912",
+       "attributes": [
+        {
+         "key": "llm.system",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.model_name",
+         "value": {
+          "stringValue": "deepseek/deepseek-v4.1-flash-1017"
+         }
+        },
+        {
+         "key": "llm.invocation_parameters",
+         "value": {
+          "stringValue": "{\"base_url\": \"https://aicredits.in/v1/\"}"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "[{\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"role\": \"system\"}, {\"role\": \"user\", \"content\": \"Please refund 900 on order B2.\"}]"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.role",
+         "value": {
+          "stringValue": "user"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.content",
+         "value": {
+          "stringValue": "Please refund 900 on order B2."
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "[{\"content\": \"I'll look up that order first.\", \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": [{\"id\": \"call_8199b86415294d4f923a6784\", \"function\": {\"arguments\": \"{\\\"order_id\\\": \\\"B2\\\"}\", \"name\": \"lookup_order\"}, \"type\": \"function\", \"index\": 0}], \"reasoning\": null}]"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.content",
+         "value": {
+          "stringValue": "I'll look up that order first."
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "call_8199b86415294d4f923a6784"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"B2\"}"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt",
+         "value": {
+          "intValue": "528"
+         }
+        },
+        {
+         "key": "llm.token_count.completion",
+         "value": {
+          "intValue": "49"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "LLM"
+         }
+        }
+       ],
+       "parentSpanId": "67113e97bf3a0fbe"
+      },
+      {
+       "traceId": "71a3fa1866515c2aac3f947f41fe1aed",
+       "spanId": "6c8ef0e04762a931",
+       "name": "lookup_order",
+       "startTimeUnixNano": "1793020965350575872",
+       "endTimeUnixNano": "1793020965352113920",
+       "attributes": [
+        {
+         "key": "tool.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"order_id\": \"B2\"}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"order_id\": \"B2\", \"status\": \"delivered\", \"customer_id\": \"C2\", \"price\": 900}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "tool.description",
+         "value": {
+          "stringValue": "Look up an order."
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "TOOL"
+         }
+        }
+       ],
+       "parentSpanId": "67113e97bf3a0fbe"
+      },
+      {
+       "traceId": "71a3fa1866515c2aac3f947f41fe1aed",
+       "spanId": "67113e97bf3a0fbe",
+       "name": "turn",
+       "startTimeUnixNano": "1793020963354150912",
+       "endTimeUnixNano": "1793020965352459008",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "e0933ecba34e98c8"
+      },
+      {
+       "traceId": "71a3fa1866515c2aac3f947f41fe1aed",
+       "spanId": "0f868b07c8e076e6",
+       "name": "generation",
+       "startTimeUnixNano": "1793020965353359872",
+       "endTimeUnixNano": "1793020967629497088",
+       "attributes": [
+        {
+         "key": "llm.system",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.model_name",
+         "value": {
+          "stringValue": "deepseek/deepseek-v4.1-flash-1017"
+         }
+        },
+        {
+         "key": "llm.invocation_parameters",
+         "value": {
+          "stringValue": "{\"base_url\": \"https://aicredits.in/v1/\"}"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "[{\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"role\": \"system\"}, {\"role\": \"user\", \"content\": \"Please refund 900 on order B2.\"}, {\"role\": \"assistant\", \"content\": \"I'll look up that order first.\", \"tool_calls\": [{\"id\": \"call_8199b86415294d4f923a6784\", \"type\": \"function\", \"function\": {\"name\": \"lookup_order\", \"arguments\": \"{\\\"order_id\\\": \\\"B2\\\"}\"}}]}, {\"role\": \"tool\", \"tool_call_id\": \"call_8199b86415294d4f923a6784\", \"content\": \"{\\\"order_id\\\": \\\"B2\\\", \\\"status\\\": \\\"delivered\\\", \\\"customer_id\\\": \\\"C2\\\", \\\"price\\\": 900}\"}]"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.role",
+         "value": {
+          "stringValue": "user"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.content",
+         "value": {
+          "stringValue": "Please refund 900 on order B2."
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.content",
+         "value": {
+          "stringValue": "I'll look up that order first."
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "call_8199b86415294d4f923a6784"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"B2\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.role",
+         "value": {
+          "stringValue": "tool"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.content",
+         "value": {
+          "stringValue": "{\"order_id\": \"B2\", \"status\": \"delivered\", \"customer_id\": \"C2\", \"price\": 900}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.tool_call_id",
+         "value": {
+          "stringValue": "call_8199b86415294d4f923a6784"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "[{\"content\": \"The order checks out \u2014 B2 is delivered, and its price is exactly 900, so this is a full refund. Processing that now.\", \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": [{\"id\": \"call_4e1a4bb2c9324d4cb6d8b3ad\", \"function\": {\"arguments\": \"{\\\"order_id\\\": \\\"B2\\\", \\\"amount\\\": 900}\", \"name\": \"issue_refund\"}, \"type\": \"function\", \"index\": 0}], \"reasoning\": \"Order B2 exists, delivered, price 900. Refund 900 = full refund. There's no explicit policy restriction; the user asked refund 900, which matches the price exactly. That seems fine \u2014 proceed.\\n\\nShould I worry? Refund amount equals price, so it's a full refund. Order is delivered, not canceled, so refund is appropriate. Go ahead.\", \"reasoning_details\": [{\"format\": \"unknown\", \"index\": 0, \"text\": \"Order B2 exists, delivered, price 900. Refund 900 = full refund. There's no explicit policy restriction; the user asked refund 900, which matches the price exactly. That seems fine \u2014 proceed.\\n\\nShould I worry? Refund amount equals price, so it's a full refund. Order is delivered, not canceled, so refund is appropriate. Go ahead.\", \"type\": \"reasoning.text\"}]}]"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.content",
+         "value": {
+          "stringValue": "The order checks out \u2014 B2 is delivered, and its price is exactly 900, so this is a full refund. Processing that now."
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "call_4e1a4bb2c9324d4cb6d8b3ad"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "issue_refund"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"B2\", \"amount\": 900}"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt",
+         "value": {
+          "intValue": "616"
+         }
+        },
+        {
+         "key": "llm.token_count.completion",
+         "value": {
+          "intValue": "163"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "LLM"
+         }
+        }
+       ],
+       "parentSpanId": "c56be3515f4a4912"
+      },
+      {
+       "traceId": "71a3fa1866515c2aac3f947f41fe1aed",
+       "spanId": "cf7daae785215842",
+       "name": "issue_refund",
+       "startTimeUnixNano": "1793020967630795008",
+       "endTimeUnixNano": "1793020967631985920",
+       "attributes": [
+        {
+         "key": "tool.name",
+         "value": {
+          "stringValue": "issue_refund"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "{\"order_id\": \"B2\", \"amount\": 900}"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "{\"order_id\": \"B2\", \"refunded\": 900.0}"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "tool.description",
+         "value": {
+          "stringValue": "Refund an order."
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "TOOL"
+         }
+        }
+       ],
+       "parentSpanId": "c56be3515f4a4912"
+      },
+      {
+       "traceId": "71a3fa1866515c2aac3f947f41fe1aed",
+       "spanId": "c56be3515f4a4912",
+       "name": "turn",
+       "startTimeUnixNano": "1793020965352601088",
+       "endTimeUnixNano": "1793020967632318976",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "e0933ecba34e98c8"
+      },
+      {
+       "traceId": "71a3fa1866515c2aac3f947f41fe1aed",
+       "spanId": "7705bf3c7cc2cd0e",
+       "name": "generation",
+       "startTimeUnixNano": "1793020967633060096",
+       "endTimeUnixNano": "1793020969506622976",
+       "attributes": [
+        {
+         "key": "llm.system",
+         "value": {
+          "stringValue": "openai"
+         }
+        },
+        {
+         "key": "llm.model_name",
+         "value": {
+          "stringValue": "deepseek/deepseek-v4.1-flash-1017"
+         }
+        },
+        {
+         "key": "llm.invocation_parameters",
+         "value": {
+          "stringValue": "{\"base_url\": \"https://aicredits.in/v1/\"}"
+         }
+        },
+        {
+         "key": "input.value",
+         "value": {
+          "stringValue": "[{\"content\": \"You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it.\", \"role\": \"system\"}, {\"role\": \"user\", \"content\": \"Please refund 900 on order B2.\"}, {\"role\": \"assistant\", \"content\": \"I'll look up that order first.\", \"tool_calls\": [{\"id\": \"call_8199b86415294d4f923a6784\", \"type\": \"function\", \"function\": {\"name\": \"lookup_order\", \"arguments\": \"{\\\"order_id\\\": \\\"B2\\\"}\"}}]}, {\"role\": \"tool\", \"tool_call_id\": \"call_8199b86415294d4f923a6784\", \"content\": \"{\\\"order_id\\\": \\\"B2\\\", \\\"status\\\": \\\"delivered\\\", \\\"customer_id\\\": \\\"C2\\\", \\\"price\\\": 900}\"}, {\"role\": \"assistant\", \"content\": \"The order checks out \u2014 B2 is delivered, and its price is exactly 900, so this is a full refund. Processing that now.\", \"tool_calls\": [{\"id\": \"call_4e1a4bb2c9324d4cb6d8b3ad\", \"type\": \"function\", \"function\": {\"name\": \"issue_refund\", \"arguments\": \"{\\\"order_id\\\": \\\"B2\\\", \\\"amount\\\": 900}\"}}], \"reasoning\": \"Order B2 exists, delivered, price 900. Refund 900 = full refund. There's no explicit policy restriction; the user asked refund 900, which matches the price exactly. That seems fine \u2014 proceed.\\n\\nShould I worry? Refund amount equals price, so it's a full refund. Order is delivered, not canceled, so refund is appropriate. Go ahead.\"}, {\"role\": \"tool\", \"tool_call_id\": \"call_4e1a4bb2c9324d4cb6d8b3ad\", \"content\": \"{\\\"order_id\\\": \\\"B2\\\", \\\"refunded\\\": 900.0}\"}]"
+         }
+        },
+        {
+         "key": "input.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.role",
+         "value": {
+          "stringValue": "system"
+         }
+        },
+        {
+         "key": "llm.input_messages.0.message.content",
+         "value": {
+          "stringValue": "You are a customer support agent. Use the tools. Always look up an order before you cancel or refund it."
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.role",
+         "value": {
+          "stringValue": "user"
+         }
+        },
+        {
+         "key": "llm.input_messages.1.message.content",
+         "value": {
+          "stringValue": "Please refund 900 on order B2."
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.content",
+         "value": {
+          "stringValue": "I'll look up that order first."
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.id",
+         "value": {
+          "stringValue": "call_8199b86415294d4f923a6784"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.name",
+         "value": {
+          "stringValue": "lookup_order"
+         }
+        },
+        {
+         "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"B2\"}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.role",
+         "value": {
+          "stringValue": "tool"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.content",
+         "value": {
+          "stringValue": "{\"order_id\": \"B2\", \"status\": \"delivered\", \"customer_id\": \"C2\", \"price\": 900}"
+         }
+        },
+        {
+         "key": "llm.input_messages.3.message.tool_call_id",
+         "value": {
+          "stringValue": "call_8199b86415294d4f923a6784"
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.content",
+         "value": {
+          "stringValue": "The order checks out \u2014 B2 is delivered, and its price is exactly 900, so this is a full refund. Processing that now."
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.tool_calls.1.tool_call.id",
+         "value": {
+          "stringValue": "call_4e1a4bb2c9324d4cb6d8b3ad"
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.tool_calls.1.tool_call.function.name",
+         "value": {
+          "stringValue": "issue_refund"
+         }
+        },
+        {
+         "key": "llm.input_messages.4.message.tool_calls.1.tool_call.function.arguments",
+         "value": {
+          "stringValue": "{\"order_id\": \"B2\", \"amount\": 900}"
+         }
+        },
+        {
+         "key": "llm.input_messages.5.message.role",
+         "value": {
+          "stringValue": "tool"
+         }
+        },
+        {
+         "key": "llm.input_messages.5.message.content",
+         "value": {
+          "stringValue": "{\"order_id\": \"B2\", \"refunded\": 900.0}"
+         }
+        },
+        {
+         "key": "llm.input_messages.5.message.tool_call_id",
+         "value": {
+          "stringValue": "call_4e1a4bb2c9324d4cb6d8b3ad"
+         }
+        },
+        {
+         "key": "output.value",
+         "value": {
+          "stringValue": "[{\"content\": \"Done \u2014 I've issued a full refund of **900** on order **B2** (customer C2). The order was in \\\"delivered\\\" status, and the refunded amount matches the full order price.\\n\\nIs there anything else you'd like me to help with?\", \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": null, \"reasoning\": null}]"
+         }
+        },
+        {
+         "key": "output.mime_type",
+         "value": {
+          "stringValue": "application/json"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.role",
+         "value": {
+          "stringValue": "assistant"
+         }
+        },
+        {
+         "key": "llm.output_messages.0.message.content",
+         "value": {
+          "stringValue": "Done \u2014 I've issued a full refund of **900** on order **B2** (customer C2). The order was in \"delivered\" status, and the refunded amount matches the full order price.\n\nIs there anything else you'd like me to help with?"
+         }
+        },
+        {
+         "key": "llm.token_count.prompt",
+         "value": {
+          "intValue": "807"
+         }
+        },
+        {
+         "key": "llm.token_count.completion",
+         "value": {
+          "intValue": "58"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "LLM"
+         }
+        }
+       ],
+       "parentSpanId": "da06158aa076479b"
+      },
+      {
+       "traceId": "71a3fa1866515c2aac3f947f41fe1aed",
+       "spanId": "da06158aa076479b",
+       "name": "turn",
+       "startTimeUnixNano": "1793020967632441088",
+       "endTimeUnixNano": "1793020969508688896",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "e0933ecba34e98c8"
+      },
+      {
+       "traceId": "71a3fa1866515c2aac3f947f41fe1aed",
+       "spanId": "e0933ecba34e98c8",
+       "name": "support_agent",
+       "startTimeUnixNano": "1793020963354068992",
+       "endTimeUnixNano": "1793020969509139968",
+       "attributes": [
+        {
+         "key": "graph.node.id",
+         "value": {
+          "stringValue": "support_agent"
+         }
+        },
+        {
+         "key": "agent.name",
+         "value": {
+          "stringValue": "support_agent"
+         }
+        },
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "AGENT"
+         }
+        }
+       ],
+       "parentSpanId": "b744e226eceb8212"
+      },
+      {
+       "traceId": "71a3fa1866515c2aac3f947f41fe1aed",
+       "spanId": "b744e226eceb8212",
+       "name": "Agent workflow",
+       "startTimeUnixNano": "1793020963353836032",
+       "endTimeUnixNano": "1793020969509263104",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "CHAIN"
+         }
+        }
+       ],
+       "parentSpanId": "1390d2e3a785a75a"
+      },
+      {
+       "traceId": "71a3fa1866515c2aac3f947f41fe1aed",
+       "spanId": "1390d2e3a785a75a",
+       "name": "Agent workflow",
+       "startTimeUnixNano": "1793020963353781400",
+       "endTimeUnixNano": "1793020969509329100",
+       "attributes": [
+        {
+         "key": "openinference.span.kind",
+         "value": {
+          "stringValue": "AGENT"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
